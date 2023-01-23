@@ -16,19 +16,36 @@ class CategoryController extends Controller
      */
     public function index()
     {
-         $product = DB::table('products')
+        $product_feature = DB::table('products')
             ->join('categories', 'products.id_category', '=', 'categories.id')
-            ->select('products.*', 'categories.name as name_category')->paginate(4);
-        $products = DB::table('products')
+            ->select('products.*', 'categories.name as name_category')
+            ->inRandomOrder()
+            ->limit(8)
+            ->get();
+        // Dispatch::all();
+        $product_popular = DB::table('products')
             ->join('categories', 'products.id_category', '=', 'categories.id')
-            ->select('products.*', 'categories.name as name_category')->paginate(8);
+            ->select('products.*', 'categories.name as name_category')
+            ->inRandomOrder()
+            ->limit(8)
+            ->get();
+        $product_new = DB::table('products')
+            ->join('categories', 'products.id_category', '=', 'categories.id')
+            ->select('products.*', 'categories.name as name_category')
+            ->inRandomOrder()
+            ->limit(8)
+            ->get();
+            
+      
+
         return view(
             '.index',
-            ['products' => $products],
-            ['product' => $product]
+            ['product_feature' => $product_feature],
+            ['product_popular' => $product_popular],
+            ['product_new' => $product_new],
         );
 
-       
+
         // dd($product);
         // return view(
         //     '.index',
