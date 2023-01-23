@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use Illuminate\Support\Facades\DB;
+
 class CategoryController extends Controller
 {
     /**
@@ -14,10 +16,28 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('.index');
+         $product = DB::table('products')
+            ->join('categories', 'products.id_category', '=', 'categories.id')
+            ->select('products.*', 'categories.name as name_category')->paginate(4);
+        $products = DB::table('products')
+            ->join('categories', 'products.id_category', '=', 'categories.id')
+            ->select('products.*', 'categories.name as name_category')->paginate(8);
+        return view(
+            '.index',
+            ['products' => $products],
+            ['product' => $product]
+        );
+
+       
+        // dd($product);
+        // return view(
+        //     '.index',
+        //     ['product' => $product]
+        // );
     }
 
-    public function slect(){
+    public function slect()
+    {
         // $products = DB::table('products')
         // ->where('id_category', '=', 1)->paginate(9);
 
@@ -26,12 +46,11 @@ class CategoryController extends Controller
         $products = DB::table('products')
             ->join('categories', 'products.id_category', '=', 'categories.id')
             ->select('products.*', 'categories.name as name_category')
-            ->where('id_category', '=', 1 )->paginate(9);
-            // dd($products);
-        return view('.shop',[
-        'products' => $products,
-       ]);
-
+            ->where('id_category', '=', 1)->paginate(9);
+        // dd($products);
+        return view('.shop', [
+            'products' => $products,
+        ]);
     }
 
     /**
