@@ -129,8 +129,8 @@
                                                             <li><span class="submenu-title">Hot & Xu hướng</span></li>
                                                             <li><a class="dropdown-item nav-link nav_item" href="{{ route('vaydam') }}">Váy đầm</a></li>
 
-                                                            <li><a class="dropdown-item nav-link nav_item" href="#">Áo dài & áo sơ mi</a></li>
-                                                            <li><a class="dropdown-item nav-link nav_item" href="#">Hoodies & Sweater</a></li>
+                                                            <li><a class="dropdown-item nav-link nav_item" href="{{ route('aodai') }}">Áo dài & áo sơ mi</a></li>
+                                                            <li><a class="dropdown-item nav-link nav_item" href="{{ route('hoodie') }}">Hoodies & Sweater</a></li>
                                                             <li><a class="dropdown-item nav-link nav_item" href="#">Đồ nữ</a></li>
                                                             <li><a class="dropdown-item nav-link nav_item" href="#">Suits & Blazers</a></li>
                                                             <li><a class="dropdown-item nav-link nav_item" href="#">Bodysuits</a></li>
@@ -293,7 +293,7 @@
                     <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
                         <nav>
                             <ul>
-                                <li><a class="active" href="index.html">Trang chủ </a></li>
+                                <li><a class="active" href="{{ route('index') }}/">Trang chủ </a></li>
                                 <li><a href="about.html">Thông tin</a></li>
                                 <li><a href="shop.html">Gian hàng</a></li>
                                 <li class="position-static"><a href="#">Bộ sưu tập<i class="fi-rs-angle-down"></i></a>

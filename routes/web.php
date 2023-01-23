@@ -16,5 +16,7 @@ use App\Http\Controllers\CategoryController;
 Route::get('/',[CategoryController::class,'index'])->name('index');
 
 Route::get('/vay-dam',[CategoryController::class,'slect'])->name('vaydam');
+Route::get('/ao-dai-va-ao-so-mi',[CategoryController::class,'slect1'])->name('aodai');
+Route::get('/hoodie-va-sweater',[CategoryController::class,'slect2'])->name('hoodie');
 
 
