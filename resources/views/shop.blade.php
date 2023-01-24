@@ -1,24 +1,26 @@
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
-<title>Surfside Media</title>
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta property="og:title" content="">
-<meta property="og:type" content="">
-<meta property="og:url" content="">
-<meta property="og:image" content="">
-<link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.ico">
-<link rel="stylesheet" href="assets/css/main.css">
-<link rel="stylesheet" href="assets/css/custom.css"></head>
+    <title>Surfside Media</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.ico">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    
+</head>
+
 
 <body>
     @include('includes.header')
-    
+
     <div class="mobile-header-active mobile-header-wrapper-style">
         <div class="mobile-header-wrapper-inner">
             <div class="mobile-header-top">
@@ -46,14 +48,19 @@
                         </a>
                         <div class="categori-dropdown-wrap categori-dropdown-active-small">
                             <ul>
-                                <li><a href="shop.html"><i class="surfsidemedia-font-dress"></i>Women's Clothing</a></li>
+                                <li><a href="shop.html"><i class="surfsidemedia-font-dress"></i>Women's Clothing</a>
+                                </li>
                                 <li><a href="shop.html"><i class="surfsidemedia-font-tshirt"></i>Men's Clothing</a></li>
-                                <li> <a href="shop.html"><i class="surfsidemedia-font-smartphone"></i> Cellphones</a></li>
-                                <li><a href="shop.html"><i class="surfsidemedia-font-desktop"></i>Computer & Office</a></li>
-                                <li><a href="shop.html"><i class="surfsidemedia-font-cpu"></i>Consumer Electronics</a></li>
+                                <li> <a href="shop.html"><i class="surfsidemedia-font-smartphone"></i> Cellphones</a>
+                                </li>
+                                <li><a href="shop.html"><i class="surfsidemedia-font-desktop"></i>Computer & Office</a>
+                                </li>
+                                <li><a href="shop.html"><i class="surfsidemedia-font-cpu"></i>Consumer Electronics</a>
+                                </li>
                                 <li><a href="shop.html"><i class="surfsidemedia-font-home"></i>Home & Garden</a></li>
                                 <li><a href="shop.html"><i class="surfsidemedia-font-high-heels"></i>Shoes</a></li>
-                                <li><a href="shop.html"><i class="surfsidemedia-font-teddy-bear"></i>Mother & Kids</a></li>
+                                <li><a href="shop.html"><i class="surfsidemedia-font-teddy-bear"></i>Mother & Kids</a>
+                                </li>
                                 <li><a href="shop.html"><i class="surfsidemedia-font-kite"></i>Outdoor fun</a></li>
                             </ul>
                         </div>
@@ -61,11 +68,15 @@
                     <!-- mobile menu start -->
                     <nav>
                         <ul class="mobile-menu">
-                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="index.html">Home</a></li>
-                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="shop.html">shop</a></li>
-                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Our Collections</a>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                    href="index.html">Home</a></li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                    href="shop.html">shop</a></li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Our
+                                    Collections</a>
                                 <ul class="dropdown">
-                                    <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Women's Fashion</a>
+                                    <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                            href="#">Women's Fashion</a>
                                         <ul class="dropdown">
                                             <li><a href="product-details.html">Dresses</a></li>
                                             <li><a href="product-details.html">Blouses & Shirts</a></li>
@@ -73,14 +84,16 @@
                                             <li><a href="product-details.html">Women's Sets</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Men's Fashion</a>
+                                    <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                            href="#">Men's Fashion</a>
                                         <ul class="dropdown">
                                             <li><a href="product-details.html">Jackets</a></li>
                                             <li><a href="product-details.html">Casual Faux Leather</a></li>
                                             <li><a href="product-details.html">Genuine Leather</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Technology</a>
+                                    <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                            href="#">Technology</a>
                                         <ul class="dropdown">
                                             <li><a href="product-details.html">Gaming Laptops</a></li>
                                             <li><a href="product-details.html">Ultraslim Laptops</a></li>
@@ -91,8 +104,10 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="blog.html">Blog</a></li>
-                            <li class="menu-item-has-children"><span class="menu-expand"></span><a href="#">Language</a>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                    href="blog.html">Blog</a></li>
+                            <li class="menu-item-has-children"><span class="menu-expand"></span><a
+                                    href="#">Language</a>
                                 <ul class="dropdown">
                                     <li><a href="#">English</a></li>
                                     <li><a href="#">French</a></li>
@@ -109,9 +124,9 @@
                         <a href="contact.html"> Our location </a>
                     </div>
                     <div class="single-mobile-header-info">
-                        <a href="login.html">Log In </a>                        
+                        <a href="login.html">Log In </a>
                     </div>
-                    <div class="single-mobile-header-info">                        
+                    <div class="single-mobile-header-info">
                         <a href="register.html">Sign Up</a>
                     </div>
                     <div class="single-mobile-header-info">
@@ -128,7 +143,8 @@
                 </div>
             </div>
         </div>
-    </div>        <main class="main">
+    </div>
+    <main class="main">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
@@ -143,7 +159,8 @@
                     <div class="col-lg-9">
                         <div class="shop-product-fillter">
                             <div class="totall-product">
-                                <p> Bạn tìm thấy <strong class="text-brand"> {{$products->total()}}</strong> trong cửa hàng!</p>
+                                <p> Bạn tìm thấy <strong class="text-brand"> {{ $products->total() }}</strong> trong
+                                    cửa hàng!</p>
                             </div>
                             <div class="sort-by-product-area">
                                 <div class="sort-by-cover mr-10">
@@ -187,54 +204,79 @@
                         </div>
                         <div class="row product-grid-3">
                             {{-- {{dd($products[1])}} --}}
-                            @foreach ($products as $item )
-                            <div class="col-lg-4 col-md-4 col-6 col-sm-6">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="product-details.html">
-                                                <img class="default-img" src="assets/imgs/shop/{{$item->pre_image}}.jpg" alt="">
-                                                <img class="hover-img" src="assets/imgs/shop/{{$item->cur_image}}.jpg" alt="">
-                                            </a>
+                            @foreach ($products as $item)
+                                <div class="col-lg-4 col-md-4 col-6 col-sm-6">
+                                    <div class="product-cart-wrap mb-30">
+                                        <div class="product-img-action-wrap">
+                                            <div class="product-img product-img-zoom">
+                                                <a href="product-details.html">
+                                                    <img class="default-img"
+                                                        src="assets/imgs/shop/{{ $item->pre_image }}.jpg"
+                                                        alt="">
+                                                    <img class="hover-img"
+                                                        src="assets/imgs/shop/{{ $item->cur_image }}.jpg"
+                                                        alt="">
+                                                </a>
+                                            </div>
+                                            <div class="product-action-1">
+                                                <a aria-label="Quick view" class="action-btn hover-up"
+                                                    data-bs-toggle="modal" data-bs-target="#quickViewModal">
+                                                    <i class="fi-rs-search"></i></a>
+                                                <a aria-label="Add To Wishlist" class="action-btn hover-up"
+                                                    href="wishlist.php"><i class="fi-rs-heart"></i></a>
+                                                <a aria-label="Compare" class="action-btn hover-up"
+                                                    href="compare.php"><i class="fi-rs-shuffle"></i></a>
+                                            </div>
+                                            <div class="product-badges product-badges-position product-badges-mrg">
+                                                <span class="hot">Hot</span>
+                                            </div>
                                         </div>
-                                        <div class="product-action-1">
-                                            <a aria-label="Quick view" class="action-btn hover-up" data-bs-toggle="modal" data-bs-target="#quickViewModal">
-                                                <i class="fi-rs-search"></i></a>
-                                            <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                            <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                        </div>
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="hot">Hot</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <a href="shop.html">{{ $item->name_category }}</a>
-                                        </div>
-                                        <h2><a href="product-details.html">{{ $item->name }}</a></h2>
-                                        <div class="rating-result" title="90%">
-                                            <span>
-                                                <span>Sale {{ $item->sale }}%</span>
-                                            </span>
-                                        </div>
-                                        <div class="product-price">
-                                            <span>${{ $item->price -  $item->price*$item->sale/100 }}</span> </span>
-                                            <span class="old-price">${{ $item->price }}</span>
-                                        </div>
-                                        <div class="product-action-1 show">
-                                            <a aria-label="Add To Cart" class="action-btn hover-up" href="shop-cart.php"><i class="fi-rs-shopping-bag-add"></i></a>
+                                        <div class="product-content-wrap">
+                                            <div class="product-category">
+                                                <a href="shop.html">{{ $item->name_category }}</a>
+                                            </div>
+                                            <h2><a href="product-details.html">{{ $item->name }}</a></h2>
+                                            <div class="rating-result" title="90%">
+                                                <span>
+                                                    <span>Sale {{ $item->sale }}%</span>
+                                                </span>
+                                            </div>
+                                            <div class="product-price">
+                                                <span>${{ $item->price - ($item->price * $item->sale) / 100 }}</span> </span>
+                                                <span class="old-price">${{ $item->price }}</span>
+                                            </div>
+                                            <div class="product-action-1 show">
+                                                <a aria-label="Add To Cart" class="action-btn hover-up"
+                                                    href="shop-cart.php"><i class="fi-rs-shopping-bag-add"></i></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             @endforeach
-                            
-                            
+
+
                         </div>
                         {{ $products->links('includes.pagination') }}
+                        <script>
+                            $('.pagination a').unbind('click').on('click', function(e) {
+                                e.preventDefault();
+                                var page = $(this).attr('href').split('page=')[1];
+                                getPosts(page);
+                            });
+
+                            function getPosts(page) {
+                                $.ajax({
+                                        type: "GET",
+                                        url: '?page=' + page
+                                    })
+                                    .success(function(data) {
+                                        $('body').html(data);
+                                    });
+                            }
+                        </script>
 
                         <!--pagination-->
-                        
+
                     </div>
                     <div class="col-lg-3 primary-sidebar sticky-sidebar">
                         <div class="row">
@@ -264,38 +306,56 @@
                                     <div id="slider-range"></div>
                                     <div class="price_slider_amount">
                                         <div class="label-input">
-                                            <span>Range:</span><input type="text" id="amount" name="price" placeholder="Add Your Price">
+                                            <span>Range:</span><input type="text" id="amount" name="price"
+                                                placeholder="Add Your Price">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {{-- giá<input type="text" id="fname" name="price"> --}}
+
+
                             <div class="list-group">
                                 <div class="list-group-item mb-10 mt-10">
                                     <label class="fw-900">Color</label>
                                     <div class="custome-checkbox">
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="">
-                                        <label class="form-check-label" for="exampleCheckbox1"><span>Red (56)</span></label>
+                                        <input class="form-check-input" type="checkbox" name="checkbox"
+                                            id="exampleCheckbox1" value="">
+                                        <label class="form-check-label" for="exampleCheckbox1"><span>Red
+                                                (56)</span></label>
                                         <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox2" value="">
-                                        <label class="form-check-label" for="exampleCheckbox2"><span>Green (78)</span></label>
+                                        <input class="form-check-input" type="checkbox" name="checkbox"
+                                            id="exampleCheckbox2" value="">
+                                        <label class="form-check-label" for="exampleCheckbox2"><span>Green
+                                                (78)</span></label>
                                         <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox3" value="">
-                                        <label class="form-check-label" for="exampleCheckbox3"><span>Blue (54)</span></label>
+                                        <input class="form-check-input" type="checkbox" name="checkbox"
+                                            id="exampleCheckbox3" value="">
+                                        <label class="form-check-label" for="exampleCheckbox3"><span>Blue
+                                                (54)</span></label>
                                     </div>
                                     <label class="fw-900 mt-15">Item Condition</label>
                                     <div class="custome-checkbox">
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox11" value="">
-                                        <label class="form-check-label" for="exampleCheckbox11"><span>New (1506)</span></label>
+                                        <input class="form-check-input" type="checkbox" name="checkbox"
+                                            id="exampleCheckbox11" value="">
+                                        <label class="form-check-label" for="exampleCheckbox11"><span>New
+                                                (1506)</span></label>
                                         <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox21" value="">
-                                        <label class="form-check-label" for="exampleCheckbox21"><span>Refurbished (27)</span></label>
+                                        <input class="form-check-input" type="checkbox" name="checkbox"
+                                            id="exampleCheckbox21" value="">
+                                        <label class="form-check-label" for="exampleCheckbox21"><span>Refurbished
+                                                (27)</span></label>
                                         <br>
-                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox31" value="">
-                                        <label class="form-check-label" for="exampleCheckbox31"><span>Used (45)</span></label>
+                                        <input class="form-check-input" type="checkbox" name="checkbox"
+                                            id="exampleCheckbox31" value="">
+                                        <label class="form-check-label" for="exampleCheckbox31"><span>Used
+                                                (45)</span></label>
                                     </div>
                                 </div>
                             </div>
-                            <a href="shop.html" class="btn btn-sm btn-default"><i class="fi-rs-filter mr-5"></i> Fillter</a>
+                            <button type="button" class="btn btn-sm btn-default "><i
+                                    class="fi-rs-filter mr-5"></i> Fillter</button>
+                            
                         </div>
                         <!-- Product sidebar Widget -->
                         <div class="sidebar-widget product-sidebar  mb-30 p-30 bg-grey border-radius-10">
@@ -356,29 +416,29 @@
     @include('includes.footer')
 
     <!-- Vendor JS-->
-<script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
-<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-<script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
-<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
-<script src="assets/js/plugins/slick.js"></script>
-<script src="assets/js/plugins/jquery.syotimer.min.js"></script>
-<script src="assets/js/plugins/wow.js"></script>
-<script src="assets/js/plugins/jquery-ui.js"></script>
-<script src="assets/js/plugins/perfect-scrollbar.js"></script>
-<script src="assets/js/plugins/magnific-popup.js"></script>
-<script src="assets/js/plugins/select2.min.js"></script>
-<script src="assets/js/plugins/waypoints.js"></script>
-<script src="assets/js/plugins/counterup.js"></script>
-<script src="assets/js/plugins/jquery.countdown.min.js"></script>
-<script src="assets/js/plugins/images-loaded.js"></script>
-<script src="assets/js/plugins/isotope.js"></script>
-<script src="assets/js/plugins/scrollup.js"></script>
-<script src="assets/js/plugins/jquery.vticker-min.js"></script>
-<script src="assets/js/plugins/jquery.theia.sticky.js"></script>
-<script src="assets/js/plugins/jquery.elevatezoom.js"></script>
-<!-- Template  JS -->
-<script src="assets/js/main.js?v=3.3"></script>
-<script src="assets/js/shop.js?v=3.3"></script>
+    <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plugins/slick.js"></script>
+    <script src="assets/js/plugins/jquery.syotimer.min.js"></script>
+    <script src="assets/js/plugins/wow.js"></script>
+    <script src="assets/js/plugins/jquery-ui.js"></script>
+    <script src="assets/js/plugins/perfect-scrollbar.js"></script>
+    <script src="assets/js/plugins/magnific-popup.js"></script>
+    <script src="assets/js/plugins/select2.min.js"></script>
+    <script src="assets/js/plugins/waypoints.js"></script>
+    <script src="assets/js/plugins/counterup.js"></script>
+    <script src="assets/js/plugins/jquery.countdown.min.js"></script>
+    <script src="assets/js/plugins/images-loaded.js"></script>
+    <script src="assets/js/plugins/isotope.js"></script>
+    <script src="assets/js/plugins/scrollup.js"></script>
+    <script src="assets/js/plugins/jquery.vticker-min.js"></script>
+    <script src="assets/js/plugins/jquery.theia.sticky.js"></script>
+    <script src="assets/js/plugins/jquery.elevatezoom.js"></script>
+    <!-- Template  JS -->
+    <script src="assets/js/main.js?v=3.3"></script>
+    <script src="assets/js/shop.js?v=3.3"></script>
     <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
@@ -402,6 +462,10 @@
 
     <script src="assets/js/main.js?v=3.3"></script>
     <script src="assets/js/shop.js?v=3.3"></script>
+
+
+
+    
 </body>
 
 </html>
