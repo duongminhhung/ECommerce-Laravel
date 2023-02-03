@@ -21,5 +21,11 @@ Route::get('/hoodie-va-sweater',[CategoryController::class,'slect2'])->name('hoo
 Route::get('/login',[CustomerController::class,'login'])->name('login');
 Route::get('/register',[CustomerController::class,'register'])->name('register');
 Route::post('/register',[CustomerController::class,'store'])->name('store');
+Route::post('/login',[CustomerController::class,'store_login'])->name('store_login');
+Route::get('/logout',[CustomerController::class,'logout'])->name('logout');
+Route::get('/cart',[CategoryController::class,'cart'])->name('cart');
+Route::get('/AddtoCart/{id}',[CategoryController::class,'AddtoCart'])->name('AddtoCart');
+Route::patch('update-cart', [CategoryController::class, 'update'])->name('update.cart');
+
 
 

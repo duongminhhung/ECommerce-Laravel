@@ -6,6 +6,8 @@ use App\Models\Customer;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
 use Illuminate\Http\Request;
+use \Illuminate\Foundation\Auth\AuthenticatesUsers;
+use PhpParser\Node\Stmt\TryCatch;
 
 class CustomerController extends Controller
 {
@@ -27,14 +29,37 @@ class CustomerController extends Controller
         return view('.register');
     }
 
+    public function logout()
+    {
+        session()->flush();
+        return redirect()->route('index');  
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function store_login(Request $request)
     {
-        //
+        try{
+            $cus = Customer::query()
+            ->where('email',$request->get('email'))
+            ->where('password',$request->get('password'))
+            ->firstOrFail();
+            // dd($cus->id);
+            session()->put('id',$cus->id);  
+            session()->put('name',$cus->name);  
+            session()->put('id',$cus->id);  
+            session()->put('id',$cus->id);  
+            session()->put('id',$cus->id);
+            return redirect()->route('index');  
+            
+        }catch (\Throwable $e) {
+            return redirect()->route('login');
+        }
+        // dd(1);
+    
     }
 
     /**
@@ -47,8 +72,7 @@ class CustomerController extends Controller
     {
         $user = Customer::create(request(['name', 'email', 'password']));
         
-        return redirect()->action([CategoryController::class, 'index']);
-
+        return redirect()->route('index');
 
     }
 

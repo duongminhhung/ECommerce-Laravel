@@ -96,7 +96,6 @@
             </div>
         </section>
     </main>
-    @include('includes.footer')
 
     <!-- Vendor JS-->
     <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>

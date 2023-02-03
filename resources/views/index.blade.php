@@ -180,7 +180,7 @@
                                             </div>
                                             <div class="product-action-1 show">
                                                 <a aria-label="Add To Cart" class="action-btn hover-up"
-                                                    href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
+                                                    href=""><i class="fi-rs-shopping-bag-add"></i></a>
                                             </div>
                                         </div>
                                     </div>
