@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use App\Models\Product;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
@@ -64,7 +66,7 @@ class CategoryController extends Controller
             ->join('categories', 'products.id_category', '=', 'categories.id')
             ->select('products.*', 'categories.name as name_category')
             ->where('id_category', '=', 1)->paginate(9);
-        // dd($products);
+        // dd($products['1']);
         return view('.shop', [
             'products' => $products,
         ]);
@@ -90,14 +92,15 @@ class CategoryController extends Controller
         ]);
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function cart()
     {
-        //
+        return view('cart');
     }
 
     /**
@@ -109,6 +112,27 @@ class CategoryController extends Controller
     public function store(StoreCategoryRequest $request)
     {
         //
+    }
+    public function AddtoCart($id){
+        $product = Product::findOrFail($id);
+          
+        $cart = session()->get('cart', []);
+  
+        if(isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+        } else {
+            $cart[$id] = [
+                "name" => $product->name,
+                "quantity" => 1,
+                "price" => $product->price,
+                "sale" => $product->sale,
+                "pre_image" => $product->pre_image  
+            ];
+        }
+          
+        session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Đã thêm sản phẩm vào giỏ hàng');   
+
     }
 
     /**
@@ -140,9 +164,14 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCategoryRequest $request, Category $category)
+    public function update(Request $request)
     {
-        //
+        if($request->id && $request->quantity){
+            $cart = session()->get('cart');
+            $cart[$request->id]["quantity"] = $request->quantity;
+            session()->put('cart', $cart);
+            session()->flash('success', 'Cart updated successfully');
+        }
     }
 
     /**

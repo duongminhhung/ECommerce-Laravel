@@ -18,6 +18,7 @@
 
 <body>
     @include('includes.header')
+    
             <main class="main">
         <div class="page-header breadcrumb-wrap">
             <div class="container">
@@ -38,9 +39,10 @@
                                         <div class="heading_s1">
                                             <h3 class="mb-30">Đăng nhập</h3>
                                         </div>
-                                        <form method="post">
+                                        <form method="post" action="{{ route('store_login') }}">
+                                            @csrf
                                             <div class="form-group">
-                                                <input type="text" required="" name="email" placeholder="Nhập Email">
+                                                <input type="text" required="" name="email" placeholder="Nhập Email"    >
                                             </div>
                                             <div class="form-group">
                                                 <input required="" type="password" name="password" placeholder="Điền mật khẩu">
@@ -72,7 +74,6 @@
             </div>
         </section>
     </main>
-    @include('includes.footer') 
     <!-- Vendor JS-->
 <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
 <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>

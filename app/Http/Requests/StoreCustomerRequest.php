@@ -26,8 +26,7 @@ class StoreCustomerRequest extends FormRequest
         return [
             'name' => 'required|min:2',
             'email' => 'required|email:rfc,dns|unique:customers,email',
-            // 'password' => 'required|min:8',
-            'password' => 'required',
+            'password' => 'required|min:8',
             'password_cf' => 'required|same:password'
         ];
     }

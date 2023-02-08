@@ -124,8 +124,8 @@
                                                 <span class="old-price">${{ $item->price }}</span>
                                             </div>
                                             <div class="product-action-1 show">
-                                                <a aria-label="Add To Cart" class="action-btn hover-up"
-                                                    href="shop-cart.php"><i class="fi-rs-shopping-bag-add"></i></a>
+                                                <a style="margin:0 7px;" aria-label="Thêm giỏ hàng" class="action-btn hover-up"
+                                                    href="{{ route('AddtoCart', $item->id) }}"><i class="fi-rs-shopping-bag-add"></i></a>
                                             </div>
                                         </div>
                                     </div>
