@@ -1,0 +1,58 @@
+version: '3.3'
+
+services:
+  nginx:
+    container_name: economy_nginx #mấy cái này là tên cho docker container. nếu có nhiều dự án thfi cần đặt tên khác nhau. thường là tên project + service name. như ở trên là economy + nginx
+    image: nginx:latest
+    ports:
+      - '7123:80' #đây cũng thế > 1233 vâng a em hiểu r
+    volumes:
+      - .:/app
+      - ./docker/web.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - economy_network
+  app:
+    container_name: economy_app
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    working_dir: /app
+    volumes:
+      - .:/app
+      - ./docker/php.ini:/usr/local/etc/php/php.ini
+    networks:
+      - economy_network
+  database:
+    container_name: economy_database
+    image: library/mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: abcxyz123
+      MYSQL_DATABASE: economy_test #database name set ở đây luôn
+    volumes:
+      - data:/var/lib/mysql
+      - ./docker/mysql.cnf:/etc/mysql/conf.d/mysql_custom.cnf
+    networks:
+      - economy_network
+  phpmyadmin:
+    container_name: economy_phpmyadmin
+    depends_on:
+      - database
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - '7124:80' #thay port của phpmyadmin thì cái trước : ấy. chú ý là port phải > 1233
+    environment:
+      PMA_HOST: database
+      MYSQL_ROOT_PASSWORD: abcxyz123
+    networks:
+      - economy_network
+
+volumes:
+  data:
+    driver: local
+
+networks:
+  economy_network:
+    driver: bridge
