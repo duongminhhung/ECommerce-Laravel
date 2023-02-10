@@ -38,6 +38,7 @@
                                     <tr class="main-heading">
                                         <th scope="col">Ảnh</th>
                                         <th scope="col">Tên sản phẩm</th>
+                                        <th scope="col">Giảm giá</th>
                                         <th scope="col">Giá</th>
                                         <th scope="col">Số lượng</th>
                                         <th scope="col">Tổng giá</th>
@@ -58,18 +59,20 @@
                                             <p class="font-xs">Maboriosam in a tonto nesciung eget<br> distingy magndapibus.
                                             </p>
                                         </td>
+                                        <td><span>{{ $details['sale'] }}%</span></td>
+                                        {{-- {{ dd($details['id']) }} --}}
                                         <td class="price" data-title="Price"><span>${{ $details['price']- ($details['sale'] * $details['price']) / 100 }} </span></td>
                                         <td class="text-center" data-title="Stock">
                                             <div class="detail-qty border radius  m-auto">
-                                                <a href="#" class=""><i class="fi-rs-angle-small-down"></i></a>
-                                                <span class="qty-val">2</span>
-                                                <a href="#" class=""><i class="fi-rs-angle-small-up"></i></a>
+                                                <a style="padding: 15px 0" href="{{ route('minus_quantity',$details['id']) }}" class=""><i class="fi-rs-angle-small-down"></i></a>
+                                                <span class="qty-val">{{ $details['quantity'] }}</span>
+                                                <a href="{{ route('plus_quantity',$details['id']) }}"  class=""><i class="fi-rs-angle-small-up"></i></a>
                                             </div>
                                         </td>
                                         <td class="text-right" data-title="Cart">
                                             <span>${{ $total }} </span>
                                         </td>
-                                        <td class="action" data-title="Remove"><a href="#" class="text-muted"><i class="fi-rs-trash"></i></a></td>
+                                        <td class="action" data-title="Remove"><a href="{{ route('remove',$details['id']) }}" class="text-muted"><i class="fi-rs-trash"></i></a></td>
                                     </tr>
                                     
                                     
@@ -78,13 +81,13 @@
                                     
                                     <tr>
                                         <td colspan="6" class="text-end">
-                                            <a href="#" class="text-muted"> <i class="fi-rs-cross-small"></i> Clear Cart</a>
+                                            <a href="{{ route('clearcart') }}" class="text-muted"> <i class="fi-rs-cross-small"></i> Xoá giỏ hàng</a>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <script type="text/javascript">
+                        {{-- <script type="text/javascript">
   
                             $(".update-cart").change(function (e) {
                                 e.preventDefault();
@@ -107,7 +110,7 @@
                           
                             
                           
-                        </script>
+                        </script> --}}
                         <div class="cart-action text-end">
                             <a href="#" class="btn  mr-10 mb-sm-15"><i class="fi-rs-shuffle mr-10"></i>Cập nhập giỏ hàng</a>
                             <a class="btn "><i class="fi-rs-shopping-bag mr-10"></i>Continue Shopping</a>
@@ -123,7 +126,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-lg-12">
                                             <div class="custom_select">
-                                                <select class="form-control select-active">
+                                                {{-- <select class="form-control select-active">
                                                     <option value="">Choose a option...</option>
                                                     <option value="AX">Aland Islands</option>
                                                     <option value="AF">Afghanistan</option>
@@ -369,7 +372,7 @@
                                                     <option value="YE">Yemen</option>
                                                     <option value="ZM">Zambia</option>
                                                     <option value="ZW">Zimbabwe</option>
-                                                </select>
+                                                </select> --}}
                                             </div>
                                         </div>
                                     </div>

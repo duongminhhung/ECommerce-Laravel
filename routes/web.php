@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
@@ -25,7 +26,13 @@ Route::post('/login',[CustomerController::class,'store_login'])->name('store_log
 Route::get('/logout',[CustomerController::class,'logout'])->name('logout');
 Route::get('/cart',[CategoryController::class,'cart'])->name('cart');
 Route::get('/AddtoCart/{id}',[CategoryController::class,'AddtoCart'])->name('AddtoCart');
-Route::patch('update-cart', [CategoryController::class, 'update'])->name('update.cart');
+// Route::patch('update-cart', [CategoryController::class, 'update'])->name('update.cart');
+Route::get('/plus_quantity/{id}',[CartController::class,'plus_quantity'])->name('plus_quantity');
+Route::get('/minus_quantity/{id}',[CartController::class,'minus_quantity'])->name('minus_quantity');
+Route::get('/remove/{id}',[CartController::class,'remove'])->name('remove');
+Route::get('/clearcart',[CartController::class,'clearcart'])->name('clearcart');
+
+
 
 
 

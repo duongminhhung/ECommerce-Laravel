@@ -122,6 +122,7 @@ class CategoryController extends Controller
             $cart[$id]['quantity']++;
         } else {
             $cart[$id] = [
+                "id"=>$id,
                 "name" => $product->name,
                 "quantity" => 1,
                 "price" => $product->price,
