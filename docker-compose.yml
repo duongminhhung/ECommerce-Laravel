@@ -5,7 +5,7 @@ services:
     container_name: economy_nginx #mấy cái này là tên cho docker container. nếu có nhiều dự án thfi cần đặt tên khác nhau. thường là tên project + service name. như ở trên là economy + nginx
     image: nginx:latest
     ports:
-      - '7123:80' #đây cũng thế > 1233 vâng a em hiểu r
+      - '7123:80' #prot index
     volumes:
       - .:/app
       - ./docker/web.conf:/etc/nginx/conf.d/default.conf
@@ -30,7 +30,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: abcxyz123
-      MYSQL_DATABASE: economy_test #database name set ở đây luôn
+      MYSQL_DATABASE: economy_test #name database
     volumes:
       - data:/var/lib/mysql
       - ./docker/mysql.cnf:/etc/mysql/conf.d/mysql_custom.cnf
@@ -42,7 +42,7 @@ services:
       - database
     image: phpmyadmin/phpmyadmin:latest
     ports:
-      - '7124:80' #thay port của phpmyadmin thì cái trước : ấy. chú ý là port phải > 1233
+      - '7124:80' #prot phpmyadmin
     environment:
       PMA_HOST: database
       MYSQL_ROOT_PASSWORD: abcxyz123

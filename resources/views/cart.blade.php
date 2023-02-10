@@ -60,7 +60,11 @@
                                         </td>
                                         <td class="price" data-title="Price"><span>${{ $details['price']- ($details['sale'] * $details['price']) / 100 }} </span></td>
                                         <td class="text-center" data-title="Stock">
-                                            <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" />
+                                            <div class="detail-qty border radius  m-auto">
+                                                <a href="#" class=""><i class="fi-rs-angle-small-down"></i></a>
+                                                <span class="qty-val">2</span>
+                                                <a href="#" class=""><i class="fi-rs-angle-small-up"></i></a>
+                                            </div>
                                         </td>
                                         <td class="text-right" data-title="Cart">
                                             <span>${{ $total }} </span>
@@ -105,7 +109,7 @@
                           
                         </script>
                         <div class="cart-action text-end">
-                            <a class="btn  mr-10 mb-sm-15"><i class="fi-rs-shuffle mr-10"></i>Update Cart</a>
+                            <a href="#" class="btn  mr-10 mb-sm-15"><i class="fi-rs-shuffle mr-10"></i>Cập nhập giỏ hàng</a>
                             <a class="btn "><i class="fi-rs-shopping-bag mr-10"></i>Continue Shopping</a>
                         </div>
                         <div class="divider center_icon mt-50 mb-50"><i class="fi-rs-fingerprint"></i></div>
@@ -437,7 +441,7 @@
             </div>
         </section>
     </main>
-    @include('includes.footer')   
+    {{-- @include('includes.footer')    --}}
     <!-- Vendor JS-->
 <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
 <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
