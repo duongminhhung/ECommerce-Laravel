@@ -4,6 +4,8 @@ use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,8 +33,7 @@ Route::get('/plus_quantity/{id}',[CartController::class,'plus_quantity'])->name(
 Route::get('/minus_quantity/{id}',[CartController::class,'minus_quantity'])->name('minus_quantity');
 Route::get('/remove/{id}',[CartController::class,'remove'])->name('remove');
 Route::get('/clearcart',[CartController::class,'clearcart'])->name('clearcart');
-
-
-
-
-
+Route::get('/shop',[CategoryController::class,'shop'])->name('shop');
+Route::get('/shop',[CategoryController::class,'shop'])->name('shop');
+Route::get('/details/{id}',[ProductController::class,'details'])->name('details');
+Route::get('/test',[ProductController::class,'test'])->name('test');

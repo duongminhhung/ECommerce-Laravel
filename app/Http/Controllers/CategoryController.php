@@ -37,8 +37,8 @@ class CategoryController extends Controller
             ->inRandomOrder()
             ->limit(8)
             ->get();
-            
-      
+
+
 
         return view(
             '.index',
@@ -51,10 +51,20 @@ class CategoryController extends Controller
         // dd($product);
         // return view(
         //     '.index',
-        //     ['product' => $product]
+        //     ['product' => $product]()
         // );
     }
+    public function shop()
+    {
+        $products = DB::table('products')
+        ->join('categories', 'products.id_category', '=', 'categories.id')
+        ->select('products.*', 'categories.name as name_category')->paginate(9);
+        // ->where('id_category', '=', 1)->paginate(9);
+    return view('.shop', [
+        'products' => $products,
+    ]);
 
+    }
     public function slect()
     {
         // $products = DB::table('products')
@@ -71,7 +81,8 @@ class CategoryController extends Controller
             'products' => $products,
         ]);
     }
-    public function slect1(){
+    public function slect1()
+    {
         $products = DB::table('products')
             ->join('categories', 'products.id_category', '=', 'categories.id')
             ->select('products.*', 'categories.name as name_category')
@@ -81,7 +92,8 @@ class CategoryController extends Controller
             'products' => $products,
         ]);
     }
-    public function slect2(){
+    public function slect2()
+    {
         $products = DB::table('products')
             ->join('categories', 'products.id_category', '=', 'categories.id')
             ->select('products.*', 'categories.name as name_category')
@@ -113,27 +125,27 @@ class CategoryController extends Controller
     {
         //
     }
-    public function AddtoCart($id){
+    public function AddtoCart($id)
+    {
         $product = Product::findOrFail($id);
-          
+
         $cart = session()->get('cart', []);
-  
-        if(isset($cart[$id])) {
+
+        if (isset($cart[$id])) {
             $cart[$id]['quantity']++;
         } else {
             $cart[$id] = [
-                "id"=>$id,
+                "id" => $id,
                 "name" => $product->name,
                 "quantity" => 1,
                 "price" => $product->price,
                 "sale" => $product->sale,
-                "pre_image" => $product->pre_image  
+                "pre_image" => $product->pre_image
             ];
         }
-          
-        session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Đã thêm sản phẩm vào giỏ hàng');   
 
+        session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Đã thêm sản phẩm vào giỏ hàng');
     }
 
     /**
@@ -167,7 +179,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request)
     {
-        if($request->id && $request->quantity){
+        if ($request->id && $request->quantity) {
             $cart = session()->get('cart');
             $cart[$request->id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);

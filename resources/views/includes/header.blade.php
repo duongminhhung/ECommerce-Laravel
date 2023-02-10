@@ -94,9 +94,9 @@
                                             <h4><a href="product-details.html">{{ $details['name'] }}</a></h4>
                                             <h4><span> </span>${{ $details['price']- ($details['sale'] * $details['price']) / 100 }}</h4>
                                             <h4 style="margin-right: 100px" class="text-center" data-title="Stock"><div class="detail-qty border radius  m-auto">
-                                                <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
+                                                <a style="padding:0 10px" href="{{ route('minus_quantity',$details['id']) }}" class=""><i class="fi-rs-angle-small-down"></i></a>
                                                 <span style="padding:0 10px" class="qty-val">{{ $details['quantity'] }}</span>
-                                                <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
+                                                <a href="{{ route('plus_quantity',$details['id']) }}" class=""><i class="fi-rs-angle-small-up"></i></a>
                                             </div></h4>
                                         </div>
                                         <div class="shopping-cart-delete">
@@ -115,7 +115,7 @@
                                         </div>
                                         <div class="shopping-cart-button">
                                             <a href="{{ route('cart') }}" class="outline">Giỏ hàng</a>
-                                            <a href="checkout.html">Checkout</a>
+                                            <a href="checkout.html">Thanh toán</a>
                                         </div>
                                     </div>
                                 </div>
@@ -383,7 +383,7 @@
                             <ul>
                                 <li><a class="active" href="{{ route('index') }}">Trang chủ </a></li>
                                 <li><a href="about.html">Thông tin</a></li>
-                                <li><a href="shop.html">Gian hàng</a></li>
+                                <li><a href="{{ route('shop') }}">Gian hàng</a></li>
                                 <li class="position-static"><a href="#">Bộ sưu tập<i
                                             class="fi-rs-angle-down"></i></a>
                                     <ul class="mega-menu">

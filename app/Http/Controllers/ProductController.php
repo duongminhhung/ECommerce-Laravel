@@ -27,6 +27,9 @@ class ProductController extends Controller
     {
         //
     }
+    public function details($id){ 
+        return view('details_product');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -37,6 +40,10 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         //
+    }
+    public  function test()
+    {
+        return view('details_product');
     }
 
     /**

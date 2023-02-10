@@ -55,7 +55,7 @@
                                     <tr>
                                         <td class="image product-thumbnail"><img src="assets/imgs/shop/{{ $details['pre_image'] }}.jpg" alt="#"></td>
                                         <td class="product-des product-name">
-                                            <h5 class="product-name"><a href="product-details.html">{{ $details['name'] }}</a></h5>
+                                            <h5 class="product-name"><a href="{{ route('details',$details['id']) }}">{{ $details['name'] }}</a></h5>
                                             <p class="font-xs">Maboriosam in a tonto nesciung eget<br> distingy magndapibus.
                                             </p>
                                         </td>
@@ -113,7 +113,7 @@
                         </script> --}}
                         <div class="cart-action text-end">
                             <a href="#" class="btn  mr-10 mb-sm-15"><i class="fi-rs-shuffle mr-10"></i>Cập nhập giỏ hàng</a>
-                            <a class="btn "><i class="fi-rs-shopping-bag mr-10"></i>Continue Shopping</a>
+                            <a href="{{ route('shop') }}" class="btn "><i class="fi-rs-shopping-bag mr-10"></i>Tiếp tục mua hàng</a>
                         </div>
                         <div class="divider center_icon mt-50 mb-50"><i class="fi-rs-fingerprint"></i></div>
                         <div class="row mb-50">

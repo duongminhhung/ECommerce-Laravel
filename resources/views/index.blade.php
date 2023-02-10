@@ -18,7 +18,7 @@
 
 <body>
     @include('includes.header')
-    
+
     <main class="main">
         <section class="home-slider position-relative pt-50">
             <div class="hero-slider-1 dot-style-1 dot-style-1-position-1">
@@ -140,14 +140,17 @@
                     <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
                         <div class="row product-grid-4">
                             @foreach ($product_feature as $item)
+                                {{-- {{ dd($product_feature[1]) }} --}}
                                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
                                     <div class="product-cart-wrap mb-30">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
                                                 <a href="product-details.html">
-                                                    <img class="default-img" src="assets/imgs/shop/product-2-1.jpg"
+                                                    <img class="default-img"
+                                                        src="assets/imgs/shop/{{ $item->pre_image }}.jpg"
                                                         alt="">
-                                                    <img class="hover-img" src="assets/imgs/shop/product-2-2.jpg"
+                                                    <img class="hover-img"
+                                                        src="assets/imgs/shop/{{ $item->cur_image }}.jpg"
                                                         alt="">
                                                 </a>
                                             </div>
@@ -166,17 +169,17 @@
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
-                                                <a href="shop.html">Clothing</a>
+                                                <a href="shop.html">{{ $item->name_category }}</a>
                                             </div>
-                                            <h2><a href="product-details.html">Plain Color Pocket Shirts</a></h2>
+                                            <h2><a href="product-details.html">{{ $item->name }}</a></h2>
                                             <div class="rating-result" title="90%">
                                                 <span>
-                                                    <span>50%</span>
+                                                    <span>{{ $item->sale }}%</span>
                                                 </span>
                                             </div>
                                             <div class="product-price">
-                                                <span>$138.85 </span>
-                                                <span class="old-price">$255.8</span>
+                                                <span>${{ $item->price - ($item->price * $item->sale) / 100 }}</span> </span>
+                                                <span class="old-price">${{ $item->price }}</span>
                                             </div>
                                             <div class="product-action-1 show">
                                                 <a aria-label="Add To Cart" class="action-btn hover-up"
@@ -197,51 +200,53 @@
                         <div class="row product-grid-4">
 
                             @foreach ($product_popular as $item)
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
-                                    <div class="product-cart-wrap mb-30">
-                                        <div class="product-img-action-wrap">
-                                            <div class="product-img product-img-zoom">
-                                                <a href="product-details.html">
-                                                    <img class="default-img" src="assets/imgs/shop/product-9-1.jpg"
-                                                        alt="">
-                                                    <img class="hover-img" src="assets/imgs/shop/product-9-2.jpg"
-                                                        alt="">
-                                                </a>
-                                            </div>
-                                            <div class="product-action-1">
-                                                <a aria-label="Quick view" class="action-btn hover-up"
-                                                    data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                        class="fi-rs-eye"></i></a>
-                                                <a aria-label="Add To Wishlist" class="action-btn hover-up"
-                                                    href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                                <a aria-label="Compare" class="action-btn hover-up"
-                                                    href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                            </div>
-                                            <div class="product-badges product-badges-position product-badges-mrg">
-                                                <span class="hot">Hot</span>
-                                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
+                                <div class="product-cart-wrap mb-30">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="product-details.html">
+                                                <img class="default-img"
+                                                    src="assets/imgs/shop/{{ $item->pre_image }}.jpg"
+                                                    alt="">
+                                                <img class="hover-img"
+                                                    src="assets/imgs/shop/{{ $item->cur_image }}.jpg"
+                                                    alt="">
+                                            </a>
                                         </div>
-                                        <div class="product-content-wrap">
-                                            <div class="product-category">
-                                                <a href="shop.html">Donec </a>
-                                            </div>
-                                            <h2><a href="product-details.html">Lorem ipsum dolor</a></h2>
-                                            <div class="rating-result" title="90%">
-                                                <span>
-                                                    <span>90%</span>
-                                                </span>
-                                            </div>
-                                            <div class="product-price">
-                                                <span>$238.85 </span>
-                                                <span class="old-price">$245.8</span>
-                                            </div>
-                                            <div class="product-action-1 show">
-                                                <a aria-label="Add To Cart" class="action-btn hover-up"
-                                                    href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
-                                            </div>
+                                        <div class="product-action-1">
+                                            <a aria-label="Quick view" class="action-btn hover-up"
+                                                data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
+                                                    class="fi-rs-eye"></i></a>
+                                            <a aria-label="Add To Wishlist" class="action-btn hover-up"
+                                                href="wishlist.php"><i class="fi-rs-heart"></i></a>
+                                            <a aria-label="Compare" class="action-btn hover-up"
+                                                href="compare.php"><i class="fi-rs-shuffle"></i></a>
+                                        </div>
+                                        <div class="product-badges product-badges-position product-badges-mrg">
+                                            <span class="new">New</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap">
+                                        <div class="product-category">
+                                            <a href="shop.html">{{ $item->name_category }}</a>
+                                        </div>
+                                        <h2><a href="product-details.html">{{ $item->name }}</a></h2>
+                                        <div class="rating-result" title="90%">
+                                            <span>
+                                                <span>{{ $item->sale }}%</span>
+                                            </span>
+                                        </div>
+                                        <div class="product-price">
+                                            <span>${{ $item->price - ($item->price * $item->sale) / 100 }}</span> </span>
+                                            <span class="old-price">${{ $item->price }}</span>
+                                        </div>
+                                        <div class="product-action-1 show">
+                                            <a aria-label="Add To Cart" class="action-btn hover-up"
+                                                href=""><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             @endforeach
                             {{-- {{ $product->links('includes.pagination') }} --}}
 
@@ -253,51 +258,53 @@
                         <div class="row product-grid-4">
 
                             @foreach ($product_popular as $item)
-                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
-                                    <div class="product-cart-wrap mb-30">
-                                        <div class="product-img-action-wrap">
-                                            <div class="product-img product-img-zoom">
-                                                <a href="product-details.html">
-                                                    <img class="default-img" src="assets/imgs/shop/product-2-1.jpg"
-                                                        alt="">
-                                                    <img class="hover-img" src="assets/imgs/shop/product-2-2.jpg"
-                                                        alt="">
-                                                </a>
-                                            </div>
-                                            <div class="product-action-1">
-                                                <a aria-label="Quick view" class="action-btn hover-up"
-                                                    data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
-                                                        class="fi-rs-eye"></i></a>
-                                                <a aria-label="Add To Wishlist" class="action-btn hover-up"
-                                                    href="wishlist.php"><i class="fi-rs-heart"></i></a>
-                                                <a aria-label="Compare" class="action-btn hover-up"
-                                                    href="compare.php"><i class="fi-rs-shuffle"></i></a>
-                                            </div>
-                                            <div class="product-badges product-badges-position product-badges-mrg">
-                                                <span class="hot">Hot</span>
-                                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
+                                <div class="product-cart-wrap mb-30">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="product-details.html">
+                                                <img class="default-img"
+                                                    src="assets/imgs/shop/{{ $item->pre_image }}.jpg"
+                                                    alt="">
+                                                <img class="hover-img"
+                                                    src="assets/imgs/shop/{{ $item->cur_image }}.jpg"
+                                                    alt="">
+                                            </a>
                                         </div>
-                                        <div class="product-content-wrap">
-                                            <div class="product-category">
-                                                <a href="shop.html">Music</a>
-                                            </div>
-                                            <h2><a href="product-details.html">Donec ut nisl rutrum</a></h2>
-                                            <div class="rating-result" title="90%">
-                                                <span>
-                                                    <span>90%</span>
-                                                </span>
-                                            </div>
-                                            <div class="product-price">
-                                                <span>$238.85 </span>
-                                                <span class="old-price">$245.8</span>
-                                            </div>
-                                            <div class="product-action-1 show">
-                                                <a aria-label="Add To Cart" class="action-btn hover-up"
-                                                    href="cart.html"><i class="fi-rs-shopping-bag-add"></i></a>
-                                            </div>
+                                        <div class="product-action-1">
+                                            <a aria-label="Quick view" class="action-btn hover-up"
+                                                data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
+                                                    class="fi-rs-eye"></i></a>
+                                            <a aria-label="Add To Wishlist" class="action-btn hover-up"
+                                                href="wishlist.php"><i class="fi-rs-heart"></i></a>
+                                            <a aria-label="Compare" class="action-btn hover-up"
+                                                href="compare.php"><i class="fi-rs-shuffle"></i></a>
+                                        </div>
+                                        <div class="product-badges product-badges-position product-badges-mrg">
+                                            <span class="new">New</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-content-wrap">
+                                        <div class="product-category">
+                                            <a href="shop.html">{{ $item->name_category }}</a>
+                                        </div>
+                                        <h2><a href="product-details.html">{{ $item->name }}</a></h2>
+                                        <div class="rating-result" title="90%">
+                                            <span>
+                                                <span>{{ $item->sale }}%</span>
+                                            </span>
+                                        </div>
+                                        <div class="product-price">
+                                            <span>${{ $item->price - ($item->price * $item->sale) / 100 }}</span> </span>
+                                            <span class="old-price">${{ $item->price }}</span>
+                                        </div>
+                                        <div class="product-action-1 show">
+                                            <a aria-label="Add To Cart" class="action-btn hover-up"
+                                                href=""><i class="fi-rs-shopping-bag-add"></i></a>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             @endforeach
                         </div>
                         <!--End product-grid-4-->
