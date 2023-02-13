@@ -9,7 +9,7 @@
                                 <a class="language-dropdown-active" href="#"> <i class="fi-rs-world"></i> Tiếng Việt
                                     <i class="fi-rs-angle-small-down"></i></a>
                                 <ul class="language-dropdown">
-                                    <li><a href="#"><img src="assets/imgs/theme/flag-eng.png"
+                                    <li><a href="#"><img src="{{ asset('assets/imgs/theme/flag-eng.png') }}"
                                                 alt="">English</a></li>
 
                                 </ul>
@@ -54,7 +54,7 @@
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="{{ route('index') }}"><img src="assets/imgs/logo/logo.png" alt="logo"></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset('assets/imgs/logo/logo.png') }} " alt="logo"></a>
                 </div>
                 <div class="header-right">
                     <div class="search-style-1">
@@ -67,13 +67,13 @@
                             <div class="header-action-icon-2">
                                 <a href="shop-wishlist.php">
                                     <img class="svgInject" alt="Surfside Media"
-                                        src="assets/imgs/theme/icons/icon-heart.svg">
+                                        src="{{ asset('assets/imgs/theme/icons/icon-heart.svg') }} ">
                                     <span class="pro-count blue">4</span>
                                 </a>
                             </div>
                             <div class="header-action-icon-2">
                                 <a class="mini-cart-icon" href="{{ route('cart') }}">
-                                    <img alt="Surfside Media" src="assets/imgs/theme/icons/icon-cart.svg">
+                                    <img alt="Surfside Media" src="{{ asset('assets/imgs/theme/icons/icon-cart.svg') }} ">
                                     <span class="pro-count blue">{{ count((array) session('cart')) }}</span>
                                 </a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2">
@@ -87,8 +87,10 @@
                                     @foreach ( session('cart') as $id => $details )
                                     <li>
                                         <div class="shopping-cart-img">
-                                            <a href="product-details.html"><img alt="Surfside Media"
-                                                    src="assets/imgs/shop/{{ $details['pre_image'] }}.jpg"></a>
+                                                
+                                                <a href="product-details.html"><img alt=""
+                                                    src="{{ asset('assets/imgs/shop')}}{{ '/'. $details['pre_image']}}.jpg"></a>
+                                                    
                                         </div>
                                         <div class="shopping-cart-title">
                                             <h4><a href="product-details.html">{{ $details['name'] }}</a></h4>
@@ -137,7 +139,7 @@
         <div class="container">
             <div class="header-wrap header-space-between position-relative">
                 <div class="logo logo-width-1 d-block d-lg-none">
-                    <a href="index.html"><img src="assets/imgs/logo/logo.png" alt="logo"></a>
+                    <a href="index.html"><img src="{{ asset('assets/imgs/logo/logo.png') }} " alt="logo"></a>
                 </div>
                 <div class="header-nav d-none d-lg-flex">
                     <div class="main-categori-wrap d-none d-lg-block">
@@ -201,7 +203,7 @@
                                             </li>
                                             <li class="mega-menu-col col-lg-5">
                                                 <div class="header-banner2">
-                                                    <img src="assets/imgs/banner/menu-banner-2.jpg"
+                                                    <img src="{{ asset('assets/imgs/banner/menu-banner-2.jpg') }} "
                                                         alt="menu_banner1">
                                                     <div class="banne_info">
                                                         <h6>10% Off</h6>
@@ -210,7 +212,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="header-banner2">
-                                                    <img src="assets/imgs/banner/menu-banner-3.jpg"
+                                                    <img src="{{ asset('assets/imgs/banner/menu-banner-3.jpg') }} "
                                                         alt="menu_banner2">
                                                     <div class="banne_info">
                                                         <h6>15% Off</h6>
@@ -273,7 +275,7 @@
                                             </li>
                                             <li class="mega-menu-col col-lg-5">
                                                 <div class="header-banner2">
-                                                    <img src="assets/imgs/banner/menu-banner-4.jpg"
+                                                    <img src="{{ asset('assets/imgs/banner/menu-banner-4.jpg') }} "
                                                         alt="menu_banner1">
                                                     <div class="banne_info">
                                                         <h6>10% Off</h6>
@@ -331,7 +333,7 @@
                                             </li>
                                             <li class="mega-menu-col col-lg-5">
                                                 <div class="header-banner2">
-                                                    <img src="assets/imgs/banner/menu-banner-5.jpg"
+                                                    <img src="{{ asset('assets/imgs/banner/menu-banner-5.jpg') }} "
                                                         alt="menu_banner1">
                                                     <div class="banne_info">
                                                         <h6>10% Off</h6>
@@ -340,7 +342,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="header-banner2">
-                                                    <img src="assets/imgs/banner/menu-banner-6.jpg"
+                                                    <img src="{{ asset('assets/imgs/banner/menu-banner-6.jpg') }} "
                                                         alt="menu_banner2">
                                                     <div class="banne_info">
                                                         <h6>15% Off</h6>
@@ -422,7 +424,7 @@
                                         <li class="sub-mega-menu sub-mega-menu-width-34">
                                             <div class="menu-banner-wrap">
                                                 <a href="product-details.html"><img
-                                                        src="assets/imgs/banner/menu-banner.jpg"
+                                                        src="{{ asset('assets/imgs/banner/menu-banner.jpg') }} "
                                                         alt="Surfside Media"></a>
                                                 <div class="menu-banner-content">
                                                     <h4>Hot deals</h4>
@@ -449,10 +451,10 @@
                                 <li><a href="#">Tài khoản<i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="#">Dashboard</a></li>
-                                        <li><a href="#">Sản phẩm</a></li>
+                                        <li><a href="{{ route('shop') }}">Sản phẩm</a></li>
                                         <li><a href="#">Danh mục</a></li>
                                         <li><a href="#">Mã giảm giá</a></li>
-                                        <li><a href="#">Đơn đặt hàng</a></li>
+                                        <li><a href="{{ route('cart') }}">Đơn đặt hàng</a></li>
                                         @if (session()->has('id'))
                                         <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
                                             @endif
@@ -470,13 +472,13 @@
                     <div class="header-action-2">
                         <div class="header-action-icon-2">
                             <a href="shop-wishlist.php">
-                                <img alt="Surfside Media" src="assets/imgs/theme/icons/icon-heart.svg">
+                                <img alt="Surfside Media" src="{{ asset('assets/imgs/theme/icons/icon-heart.svg') }} ">
                                 <span class="pro-count white">4</span>
                             </a>
                         </div>
                         <div class="header-action-icon-2">
                             <a class="mini-cart-icon" href="cart.html">
-                                <img alt="Surfside Media" src="assets/imgs/theme/icons/icon-cart.svg">
+                                <img alt="Surfside Media" src="{{ asset('assets/imgs/theme/icons/icon-cart.svg') }} ">
                                 <span class="pro-count white">2</span>
                             </a>
                             <div class="cart-dropdown-wrap cart-dropdown-hm2">
@@ -484,11 +486,11 @@
                                     <li>
                                         <div class="shopping-cart-img">
                                             <a href="product-details.html"><img alt="Surfside Media"
-                                                    src="assets/imgs/shop/thumbnail-3.jpg"></a>
+                                                    src="{{ asset('assets/imgs/shop/thumbnail-3.jpg') }} "></a>
                                         </div>
                                         <div class="shopping-cart-title">
                                             <h4><a href="product-details.html">Plain Striola Shirts</a></h4>
-                                            <h3><span>1 × </span>$800.00</h3>
+                                            <h3><span>1  </span>$800.00</h3>
                                         </div>
                                         <div class="shopping-cart-delete">
                                             <a href="#"><i class="fi-rs-cross-small"></i></a>
@@ -497,7 +499,7 @@
                                     <li>
                                         <div class="shopping-cart-img">
                                             <a href="product-details.html"><img alt="Surfside Media"
-                                                    src="assets/imgs/shop/thumbnail-4.jpg"></a>
+                                                    src="{{ asset('assets/imgs/shop/thumbnail-4.jpg') }} "></a>
                                         </div>
                                         <div class="shopping-cart-title">
                                             <h4><a href="product-details.html">Macbook Pro 2022</a></h4>
@@ -536,7 +538,7 @@
     <div class="mobile-header-wrapper-inner">
         <div class="mobile-header-top">
             <div class="mobile-header-logo">
-                <a href="index.html"><img src="assets/imgs/logo/logo.png" alt="logo"></a>
+                <a href="index.html"><img src="{{ asset('assets/imgs/logo/logo.png') }} " alt="logo"></a>
             </div>
             <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                 <button class="close-style search-close">
@@ -644,11 +646,11 @@
             </div>
             <div class="mobile-social-icon">
                 <h5 class="mb-15 text-grey-4">Follow Us</h5>
-                <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
-                <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
-                <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
-                <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
-                <a href="#"><img src="assets/imgs/theme/icons/icon-youtube.svg" alt=""></a>
+                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-facebook.svg') }} " alt=""></a>
+                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-twitter.svg') }} " alt=""></a>
+                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-instagram.svg') }} " alt=""></a>
+                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-pinterest.svg') }} " alt=""></a>
+                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-youtube.svg') }} " alt=""></a>
             </div>
         </div>
     </div>

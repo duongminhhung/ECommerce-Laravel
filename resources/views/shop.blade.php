@@ -87,7 +87,7 @@
                                     <div class="product-cart-wrap mb-30">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
-                                                <a href="product-details.html">
+                                                <a href="{{ route('details',$item->id) }}">
                                                     <img class="default-img"
                                                         src="assets/imgs/shop/{{ $item->pre_image }}.jpg"
                                                         alt="">

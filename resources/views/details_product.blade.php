@@ -12,9 +12,13 @@
 <meta property="og:type" content="">
 <meta property="og:url" content="">
 <meta property="og:image" content="">
-<link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.ico">
-<link rel="stylesheet" href="assets/css/main.css">
-<link rel="stylesheet" href="assets/css/custom.css"></head>
+{{-- Những đường dẫn như này gọi là đường dẫn tương đối, nó sẽ lấy thư mục (đường dẫn hiện tại) và nối thêm.  --}}
+{{-- nên css lúc này sẽ là http://localhost:7123/details/2/assets/imgs/theme/favicon.ico --}}
+{{-- Mà đường dẫn đó thì làm gì tồn tại --}}
+{{-- hiểu vấn đề chưa r a, em, cũng echo ra dduowfngd dẫn nma kb fix nhuw nào --}}
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/imgs/theme/favicon.ico') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}"></head>
 
 <body>
     <!-- Quick view -->
@@ -30,46 +34,46 @@
                                 <!-- MAIN SLIDES -->
                                 <div class="product-image-slider">
                                     <figure class="border-radius-10">
-                                        <img src="assets/imgs/shop/product-16-2.jpg" alt="product image">
+                                        <img src="{{ asset('assets/imgs/shop/product-16-2.jpg') }}" alt="product image">
                                     </figure>
                                     <figure class="border-radius-10">
-                                        <img src="assets/imgs/shop/product-16-1.jpg" alt="product image">
+                                        <img src="{{ asset('assets/imgs/shop/product-16-1.jpg') }}" alt="product image">
                                     </figure>
                                     <figure class="border-radius-10">
-                                        <img src="assets/imgs/shop/product-16-3.jpg" alt="product image">
+                                        <img src="{{ asset('assets/imgs/shop/product-16-1.jpg') }}" alt="product image">
                                     </figure>
                                     <figure class="border-radius-10">
-                                        <img src="assets/imgs/shop/product-16-4.jpg" alt="product image">
+                                        <img src="{{ asset('assets/imgs/shop/product-16-1.jpg') }}" alt="product image">
                                     </figure>
                                     <figure class="border-radius-10">
-                                        <img src="assets/imgs/shop/product-16-5.jpg" alt="product image">
+                                        <img src="{{ asset('assets/imgs/shop/product-16-1.jpg') }}" alt="product image">
                                     </figure>
                                     <figure class="border-radius-10">
-                                        <img src="assets/imgs/shop/product-16-6.jpg" alt="product image">
+                                        <img src="{{ asset('assets/imgs/shop/product-16-1.jpg') }}" alt="product image">
                                     </figure>
                                     <figure class="border-radius-10">
-                                        <img src="assets/imgs/shop/product-16-7.jpg" alt="product image">
+                                        <img src="{{ asset('assets/imgs/shop/product-16-1.jpg') }}" alt="product image">
                                     </figure>
                                 </div>
                                 <!-- THUMBNAILS -->
                                 <div class="slider-nav-thumbnails pl-15 pr-15">
-                                    <div><img src="assets/imgs/shop/thumbnail-3.jpg" alt="product image"></div>
-                                    <div><img src="assets/imgs/shop/thumbnail-4.jpg" alt="product image"></div>
-                                    <div><img src="assets/imgs/shop/thumbnail-5.jpg" alt="product image"></div>
-                                    <div><img src="assets/imgs/shop/thumbnail-6.jpg" alt="product image"></div>
-                                    <div><img src="assets/imgs/shop/thumbnail-7.jpg" alt="product image"></div>
-                                    <div><img src="assets/imgs/shop/thumbnail-8.jpg" alt="product image"></div>
-                                    <div><img src="assets/imgs/shop/thumbnail-9.jpg" alt="product image"></div>
+                                    <div><img src="{{ asset('assets/imgs/shop/thumbnail-3.jpg') }}" alt="product image"></div>
+                                    <div><img src="{{ asset('assets/imgs/shop/thumbnail-4.jpg') }}" alt="product image"></div>
+                                    <div><img src="{{ asset('assets/imgs/shop/thumbnail-5.jpg') }}" alt="product image"></div>
+                                    <div><img src="{{ asset('assets/imgs/shop/thumbnail-6.jpg') }}" alt="product image"></div>
+                                    <div><img src="{{ asset('assets/imgs/shop/thumbnail-7.jpg') }}" alt="product image"></div>
+                                    <div><img src="{{ asset('assets/imgs/shop/thumbnail-8.jpg') }}" alt="product image"></div>
+                                    <div><img src="{{ asset('assets/imgs/shop/thumbnail-9.jpg') }}" alt="product image"></div>
                                 </div>
                             </div>
                             <!-- End Gallery -->
                             <div class="social-icons single-share">
                                 <ul class="text-grey-5 d-inline-block">
                                     <li><strong class="mr-10">Share this:</strong></li>
-                                    <li class="social-facebook"><a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a></li>
-                                    <li class="social-twitter"> <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a></li>
-                                    <li class="social-instagram"><a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a></li>
-                                    <li class="social-linkedin"><a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a></li>
+                                    <li class="social-facebook"><a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-facebook.svg') }}" alt=""></a></li>
+                                    <li class="social-twitter"> <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-twitter.svg') }}" alt=""></a></li>
+                                    <li class="social-instagram"><a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-instagram.svg') }}" alt=""></a></li>
+                                    <li class="social-linkedin"><a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-pinterest.svg') }}" alt=""></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -152,9 +156,9 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow">Home</a>
-                    <span></span> Fashion
-                    <span></span> Abstract Print Patchwork Dress
+                    <a href="{{ route('index') }}" rel="nofollow">Trang chủ</a>
+                    <span></span> Gian hàng
+                    <span></span> Sản phẩm
                 </div>
             </div>
         </div>
@@ -169,56 +173,41 @@
                                         <span class="zoom-icon"><i class="fi-rs-search"></i></span>
                                         <!-- MAIN SLIDES -->
                                         <div class="product-image-slider">
+                                            {{-- @foreach ($products as $item ) --}}
                                             <figure class="border-radius-10">
-                                                <img src="assets/imgs/shop/product-16-2.jpg" alt="product image">
+                                                <img src="{{ asset('assets/imgs/shop')}}{{ '/'. $products->pre_image}}.jpg" alt="product image">
                                             </figure>
-                                            <figure class="border-radius-10">
-                                                <img src="assets/imgs/shop/product-16-1.jpg" alt="product image">
-                                            </figure>
-                                            <figure class="border-radius-10">
-                                                <img src="assets/imgs/shop/product-16-3.jpg" alt="product image">
-                                            </figure>
-                                            <figure class="border-radius-10">
-                                                <img src="assets/imgs/shop/product-16-4.jpg" alt="product image">
-                                            </figure>
-                                            <figure class="border-radius-10">
-                                                <img src="assets/imgs/shop/product-16-5.jpg" alt="product image">
-                                            </figure>
-                                            <figure class="border-radius-10">
-                                                <img src="assets/imgs/shop/product-16-6.jpg" alt="product image">
-                                            </figure>
-                                            <figure class="border-radius-10">
-                                                <img src="assets/imgs/shop/product-16-7.jpg" alt="product image">
-                                            </figure>
+                                            {{-- @endforeach --}}
+                                            
                                         </div>
                                         <!-- THUMBNAILS -->
-                                        <div class="slider-nav-thumbnails pl-15 pr-15">
-                                            <div><img src="assets/imgs/shop/thumbnail-3.jpg" alt="product image"></div>
-                                            <div><img src="assets/imgs/shop/thumbnail-4.jpg" alt="product image"></div>
-                                            <div><img src="assets/imgs/shop/thumbnail-5.jpg" alt="product image"></div>
-                                            <div><img src="assets/imgs/shop/thumbnail-6.jpg" alt="product image"></div>
-                                            <div><img src="assets/imgs/shop/thumbnail-7.jpg" alt="product image"></div>
-                                            <div><img src="assets/imgs/shop/thumbnail-8.jpg" alt="product image"></div>
-                                            <div><img src="assets/imgs/shop/thumbnail-9.jpg" alt="product image"></div>
-                                        </div>
+                                        {{-- <div class="slider-nav-thumbnails pl-15 pr-15">
+                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-3.jpg') }}" alt="product image"></div>
+                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-4.jpg') }}" alt="product image"></div>
+                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-5.jpg') }}" alt="product image"></div>
+                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-6.jpg') }}" alt="product image"></div>
+                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-7.jpg') }}" alt="product image"></div>
+                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-8.jpg') }}" alt="product image"></div>
+                                            <div><img src="{{ asset('assets/imgs/shop/thumbnail-9.jpg') }}" alt="product image"></div>
+                                        </div> --}}
                                     </div>
                                     <!-- End Gallery -->
                                     <div class="social-icons single-share">
                                         <ul class="text-grey-5 d-inline-block">
                                             <li><strong class="mr-10">Share this:</strong></li>
-                                            <li class="social-facebook"><a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a></li>
-                                            <li class="social-twitter"> <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a></li>
-                                            <li class="social-instagram"><a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a></li>
-                                            <li class="social-linkedin"><a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a></li>
+                                            <li class="social-facebook"><a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-facebook.svg') }}" alt=""></a></li>
+                                            <li class="social-twitter"> <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-twitter.svg') }}" alt=""></a></li>
+                                            <li class="social-instagram"><a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-instagram.svg') }}" alt=""></a></li>
+                                            <li class="social-linkedin"><a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-pinterest.svg') }}" alt=""></a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="detail-info">
-                                        <h2 class="title-detail">Colorful Pattern Shirts HD450</h2>
+                                        <h2 class="title-detail">{{$products->name }}</h2>
                                         <div class="product-detail-rating">
                                             <div class="pro-details-brand">
-                                                <span> Brands: <a href="shop.html">Bootstrap</a></span>
+                                                <span> Thương hiệu: <a href="shop.html">{{ $products->name_category }}</a></span>
                                             </div>
                                             <div class="product-rate-cover text-end">
                                                 <div class="product-rate d-inline-block">
@@ -230,20 +219,20 @@
                                         </div>
                                         <div class="clearfix product-price-cover">
                                             <div class="product-price primary-color float-left">
-                                                <ins><span class="text-brand">$120.00</span></ins>
-                                                <ins><span class="old-price font-md ml-15">$200.00</span></ins>
-                                                <span class="save-price  font-md color3 ml-15">25% Off</span>
+                                                <ins><span class="text-brand">${{ $products->price - ($products->price * $products->sale) / 100 }}</span></ins>
+                                                <ins><span class="old-price font-md ml-15">${{ $products->price }}</span></ins>
+                                                <span class="save-price  font-md color3 ml-15">{{ $products->sale }}% Off</span>
                                             </div>
                                         </div>
                                         <div class="bt-1 border-color-1 mt-15 mb-15"></div>
                                         <div class="short-desc mb-30">
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi modi, quasi, odio minus dolore impedit fuga eum eligendi? Officia doloremque facere quia. Voluptatum, accusantium!</p>
+                                            <p>{{ $products->description }}</p>
                                         </div>
                                         <div class="product_sort_info font-xs mb-30">
                                             <ul>
-                                                <li class="mb-10"><i class="fi-rs-crown mr-5"></i> 1 Year AL Jazeera Brand Warranty</li>
-                                                <li class="mb-10"><i class="fi-rs-refresh mr-5"></i> 30 Day Return Policy</li>
-                                                <li><i class="fi-rs-credit-card mr-5"></i> Cash on Delivery available</li>
+                                                <li class="mb-10"><i class="fi-rs-crown mr-5"></i> Bảo hành 1 năm</li>
+                                                <li class="mb-10"><i class="fi-rs-refresh mr-5"></i> Đổi trả hàng trong 30 ngày</li>
+                                                <li><i class="fi-rs-credit-card mr-5"></i> COD mọi lúc mọi nơi</li>
                                             </ul>
                                         </div>
                                         <div class="attr-detail attr-color mb-15">
@@ -276,7 +265,7 @@
                                                 <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
                                             </div>
                                             <div class="product-extra-link2">
-                                                <button type="submit" class="button button-add-to-cart">Add to cart</button>
+                                                <button type="submit" class="button button-add-to-cart">Thêm giỏ hàng</button>
                                                 <a aria-label="Add To Wishlist" class="action-btn hover-up" href="wishlist.php"><i class="fi-rs-heart"></i></a>
                                                 <a aria-label="Compare" class="action-btn hover-up" href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                             </div>
@@ -431,7 +420,7 @@
                                                         <div class="single-comment justify-content-between d-flex">
                                                             <div class="user justify-content-between d-flex">
                                                                 <div class="thumb text-center">
-                                                                    <img src="assets/imgs/page/avatar-6.jpg" alt="">
+                                                                    <img src="{{ asset('assets/imgs/page/avatar-6.jpg') }}" alt="">
                                                                     <h6><a href="#">Jacky Chan</a></h6>
                                                                     <p class="font-xxs">Since 2012</p>
                                                                 </div>
@@ -454,7 +443,7 @@
                                                         <div class="single-comment justify-content-between d-flex">
                                                             <div class="user justify-content-between d-flex">
                                                                 <div class="thumb text-center">
-                                                                    <img src="assets/imgs/page/avatar-7.jpg" alt="">
+                                                                    <img src="{{ asset('assets/imgs/page/avatar-7.jpg') }}" alt="">
                                                                     <h6><a href="#">Ana Rosie</a></h6>
                                                                     <p class="font-xxs">Since 2008</p>
                                                                 </div>
@@ -477,7 +466,7 @@
                                                         <div class="single-comment justify-content-between d-flex">
                                                             <div class="user justify-content-between d-flex">
                                                                 <div class="thumb text-center">
-                                                                    <img src="assets/imgs/page/avatar-8.jpg" alt="">
+                                                                    <img src="{{ asset('assets/imgs/page/avatar-8.jpg') }}" alt="">
                                                                     <h6><a href="#">Steven Keny</a></h6>
                                                                     <p class="font-xxs">Since 2010</p>
                                                                 </div>
@@ -584,8 +573,8 @@
                                                 <div class="product-img-action-wrap">
                                                     <div class="product-img product-img-zoom">
                                                         <a href="product-details.html" tabindex="0">
-                                                            <img class="default-img" src="assets/imgs/shop/product-2-1.jpg" alt="">
-                                                            <img class="hover-img" src="assets/imgs/shop/product-2-2.jpg" alt="">
+                                                            <img class="default-img" src="{{ asset('assets/imgs/shop/product-2-1.jpg') }}" alt="">
+                                                            <img class="hover-img" src="{{ asset('assets/imgs/shop/product-2-2.jpg') }}" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-action-1">
@@ -615,8 +604,8 @@
                                                 <div class="product-img-action-wrap">
                                                     <div class="product-img product-img-zoom">
                                                         <a href="product-details.html" tabindex="0">
-                                                            <img class="default-img" src="assets/imgs/shop/product-3-1.jpg" alt="">
-                                                            <img class="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="">
+                                                            <img class="default-img" src="{{ asset('') }}assets/imgs/shop/product-3-1.jpg" alt="">
+                                                            <img class="hover-img" src="{{ asset('') }}assets/imgs/shop/product-4-2.jpg" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-action-1">
@@ -646,8 +635,8 @@
                                                 <div class="product-img-action-wrap">
                                                     <div class="product-img product-img-zoom">
                                                         <a href="product-details.html" tabindex="0">
-                                                            <img class="default-img" src="assets/imgs/shop/product-4-1.jpg" alt="">
-                                                            <img class="hover-img" src="assets/imgs/shop/product-4-2.jpg" alt="">
+                                                            <img class="default-img" src="{{ asset('assets/imgs/shop/product-4-1.jpg') }}" alt="">
+                                                            <img class="hover-img" src="{{ asset('assets/imgs/shop/product-4-2.jpg') }}" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-action-1">
@@ -677,8 +666,8 @@
                                                 <div class="product-img-action-wrap">
                                                     <div class="product-img product-img-zoom">
                                                         <a href="product-details.html" tabindex="0">
-                                                            <img class="default-img" src="assets/imgs/shop/product-5-1.jpg" alt="">
-                                                            <img class="hover-img" src="assets/imgs/shop/product-3-2.jpg" alt="">
+                                                            <img class="default-img" src="{{ asset('assets/imgs/shop/product-5-1.jpg') }}" alt="">
+                                                            <img class="hover-img" src="{{ asset('assets/imgs/shop/product-3-2.jpg') }}" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-action-1">
@@ -773,7 +762,7 @@
                             </div>
                             <div class="single-post clearfix">
                                 <div class="image">
-                                    <img src="assets/imgs/shop/thumbnail-3.jpg" alt="#">
+                                    <img src="{{ asset('assets/imgs/shop/thumbnail-3.jpg') }}" alt="#">
                                 </div>
                                 <div class="content pt-10">
                                     <h5><a href="product-details.html">Chen Cardigan</a></h5>
@@ -785,7 +774,7 @@
                             </div>
                             <div class="single-post clearfix">
                                 <div class="image">
-                                    <img src="assets/imgs/shop/thumbnail-4.jpg" alt="#">
+                                    <img src="{{ asset('assets/imgs/shop/thumbnail-4.jpg') }}" alt="#">
                                 </div>
                                 <div class="content pt-10">
                                     <h6><a href="product-details.html">Chen Sweater</a></h6>
@@ -797,7 +786,7 @@
                             </div>
                             <div class="single-post clearfix">
                                 <div class="image">
-                                    <img src="assets/imgs/shop/thumbnail-5.jpg" alt="#">
+                                    <img src="{{ asset('assets/imgs/shop/thumbnail-5.jpg') }}" alt="#">
                                 </div>
                                 <div class="content pt-10">
                                     <h6><a href="product-details.html">Colorful Jacket</a></h6>
@@ -816,29 +805,29 @@
     @include('includes.footer');
     
     <!-- Vendor JS-->
-<script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
-<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-<script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
-<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
-<script src="assets/js/plugins/slick.js"></script>
-<script src="assets/js/plugins/jquery.syotimer.min.js"></script>
-<script src="assets/js/plugins/wow.js"></script>
-<script src="assets/js/plugins/jquery-ui.js"></script>
-<script src="assets/js/plugins/perfect-scrollbar.js"></script>
-<script src="assets/js/plugins/magnific-popup.js"></script>
-<script src="assets/js/plugins/select2.min.js"></script>
-<script src="assets/js/plugins/waypoints.js"></script>
-<script src="assets/js/plugins/counterup.js"></script>
-<script src="assets/js/plugins/jquery.countdown.min.js"></script>
-<script src="assets/js/plugins/images-loaded.js"></script>
-<script src="assets/js/plugins/isotope.js"></script>
-<script src="assets/js/plugins/scrollup.js"></script>
-<script src="assets/js/plugins/jquery.vticker-min.js"></script>
-<script src="assets/js/plugins/jquery.theia.sticky.js"></script>
-<script src="assets/js/plugins/jquery.elevatezoom.js"></script>
+<script src="{{ asset('assets/js/vendor/modernizr-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assets/js/vendor/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('assets/js/vendor/jquery-migrate-3.3.0.min.js') }}"></script>
+<script src="{{ asset('assets/js/vendor/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/slick.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/jquery.syotimer.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/wow.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/jquery-ui.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/perfect-scrollbar.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/magnific-popup.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/select2.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/waypoints.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/counterup.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/jquery.countdown.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/images-loaded.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/isotope.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/scrollup.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/jquery.vticker-min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/jquery.theia.sticky.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/jquery.elevatezoom.js') }}"></script>
 <!-- Template  JS -->
-<script src="assets/js/main.js?v=3.3"></script>
-<script src="assets/js/shop.js?v=3.3"></script>
+<script src="{{ asset('assets/js/shop.js?v=3.3') }}"></script>
+<script src="{{ asset('assets/js/main.js?v=3.3') }}"></script>
     <!-- <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>

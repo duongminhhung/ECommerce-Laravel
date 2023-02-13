@@ -35,5 +35,8 @@ Route::get('/remove/{id}',[CartController::class,'remove'])->name('remove');
 Route::get('/clearcart',[CartController::class,'clearcart'])->name('clearcart');
 Route::get('/shop',[CategoryController::class,'shop'])->name('shop');
 Route::get('/shop',[CategoryController::class,'shop'])->name('shop');
+
+
+
 Route::get('/details/{id}',[ProductController::class,'details'])->name('details');
 Route::get('/test',[ProductController::class,'test'])->name('test');

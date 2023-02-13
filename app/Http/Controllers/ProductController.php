@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\UpdateProductRequest;
 
 class ProductController extends Controller
@@ -27,9 +28,19 @@ class ProductController extends Controller
     {
         //
     }
-    public function details($id){ 
+    public function details($id){
+        $products = DB::table('products')
+            ->join('categories', 'products.id_category', '=', 'categories.id',)
+            ->select('products.*', 'categories.name as name_category')
+            ->where('products.id',$id)->first();
+            // dd($products);
+        return view( 'details_product', ['products' => $products] );
+    }
+    public  function test()
+    {
         return view('details_product');
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -40,10 +51,6 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         //
-    }
-    public  function test()
-    {
-        return view('details_product');
     }
 
     /**
