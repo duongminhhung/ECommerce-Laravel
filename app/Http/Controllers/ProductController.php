@@ -38,19 +38,14 @@ class ProductController extends Controller
         // dd($products);
         return view('details_product', ['products' => $products]);
     }
-    public  function test()
-    {
-        return view('includes.headertest');
-    }
+   
     public function search(Request $request)
     {
-
-        if ($request->ajax()) {
+        // if ($request->ajax()) {
 
             $data = Product::where('id', 'like', '%' . $request->search . '%')
                 ->orwhere('name', 'like', '%' . $request->search . '%')->get();
             // dd($data);
-
 
             $output = '';
             if (count($data) > 0) {
@@ -68,11 +63,11 @@ class ProductController extends Controller
                 }
             } else {
 
-                $output .= 'No results';
+                $output .= 'Không có kết quả';
             }
 
             return $output;
-        }
+        // }
     }
 
     /**

@@ -814,7 +814,7 @@
 <script src="{{ asset('assets/js/plugins/wow.js') }}"></script>
 <script src="{{ asset('assets/js/plugins/jquery-ui.js') }}"></script>
 <script src="{{ asset('assets/js/plugins/perfect-scrollbar.js') }}"></script>
-<script src="{{ asset('assets/js/plugins/magnific-popup.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/magnific-popup.js') }}"></script>  
 <script src="{{ asset('assets/js/plugins/select2.min.js') }}"></script>
 <script src="{{ asset('assets/js/plugins/waypoints.js') }}"></script>
 <script src="{{ asset('assets/js/plugins/counterup.js') }}"></script>
@@ -828,6 +828,7 @@
 <!-- Template  JS -->
 <script src="{{ asset('assets/js/shop.js?v=3.3') }}"></script>
 <script src="{{ asset('assets/js/main.js?v=3.3') }}"></script>
+
     <!-- <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>

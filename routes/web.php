@@ -40,4 +40,4 @@ Route::get('/shop',[CategoryController::class,'shop'])->name('shop');
 
 Route::get('/details/{id}',[ProductController::class,'details'])->name('details');
 Route::get('/test',[ProductController::class,'test'])->name('test');
-Route::get("search",[ProductController::class,'search'])->name('search');
+Route::get("/search",[ProductController::class,'search'])->name('search');

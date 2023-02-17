@@ -68,7 +68,7 @@
                             }
                         </style>
                         <form class="result" action="#">
-                            <input id="search" value="{{ old('search') }}" class="search-ajax" type="text"
+                            <input id="search" value="{{ old('') }}" class="search-ajax" type="text"
                                 placeholder="Nhập nội dung tìm kiếm...">
                             <div id="search_list" class="result1">
 
@@ -696,13 +696,22 @@
         $('#search').on('keyup', function() {
             var query = $(this).val();
             $.ajax({
-                url: "search",
+                url: "{{ route('search') }}?search="+ query,
                 type: "GET",
                 data: {
                     'search': query
                 },
                 success: function(data) {
                     $('#search_list').html(data);
+                    // console.table(res);
+                    // var _html = '';
+                //    for(var pro of data){
+                //     _html+= '<ul style="margin-top:3px;background: #f5f5f5;border-radius:3px;" class="test1">';
+                //     _html+= '<li style="padding: 3px 0 3px 20px;" class="test11">ádfasdf</li>';
+                // _html+='</ul>';
+                //    }
+                //    $('#search_list').html(_html);
+               
                 }
             });
             //end of ajax call
