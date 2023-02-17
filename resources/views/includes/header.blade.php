@@ -34,14 +34,12 @@
                         <ul>
                             <li>
                                 @if (session()->has('id'))
-                                    <span style="padding: 0 5px;">Hello</span> 
-                                    <span>{{ session()->get('name')}}</span>
-                                 <a href="{{ route('logout') }}">Đăng xuất</a>
-
+                                    <span style="padding: 0 5px;">Hello</span>
+                                    <span>{{ session()->get('name') }}</span>
+                                    <a href="{{ route('logout') }}">Đăng xuất</a>
                                 @else
                                     <i class="fi-rs-key"></i><a href="{{ route('login') }}">Đăng nhập </a>
-                                / <a href="{{ route('register') }}">Đăng ký</a>
-
+                                    / <a href="{{ route('register') }}">Đăng ký</a>
                                 @endif
                             </li>
                         </ul>
@@ -54,14 +52,32 @@
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="{{ route('index') }}"><img src="{{ asset('assets/imgs/logo/logo.png') }} " alt="logo"></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset('assets/imgs/logo/logo.png') }} "
+                            alt="logo"></a>
                 </div>
                 <div class="header-right">
                     <div class="search-style-1">
-                        <form action="#">
-                            <input type="text" placeholder="Nhập nội dung tìm kiếm...">
+                        <style>
+                            .result {
+                                position: relative;
+                            }
+
+                            .result1 {
+                                position: absolute;
+                                z-index: 100;
+                            }
+                        </style>
+                        <form class="result" action="#">
+                            <input id="search" value="{{ old('search') }}" class="search-ajax" type="text"
+                                placeholder="Nhập nội dung tìm kiếm...">
+                            <div id="search_list" class="result1">
+
+                            </div>
                         </form>
+
+
                     </div>
+
                     <div class="header-action-right">
                         <div class="header-action-2">
                             <div class="header-action-icon-2">
@@ -73,43 +89,54 @@
                             </div>
                             <div class="header-action-icon-2">
                                 <a class="mini-cart-icon" href="{{ route('cart') }}">
-                                    <img alt="Surfside Media" src="{{ asset('assets/imgs/theme/icons/icon-cart.svg') }} ">
+                                    <img alt="Surfside Media"
+                                        src="{{ asset('assets/imgs/theme/icons/icon-cart.svg') }} ">
                                     <span class="pro-count blue">{{ count((array) session('cart')) }}</span>
                                 </a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2">
                                     <ul>
-                                    @php $total = 0.0 @endphp
+                                        @php $total = 0.0 @endphp
 
-                                        @foreach((array) session('cart') as $id => $details)
-                            @php $total += ($details['price']- ($details['sale'] * $details['price']) / 100) * $details['quantity'] @endphp
-                        @endforeach
-                        @if(session('cart'))
-                                    @foreach ( session('cart') as $id => $details )
-                                    <li>
-                                        <div class="shopping-cart-img">
-                                                
-                                                <a href="product-details.html"><img alt=""
-                                                    src="{{ asset('assets/imgs/shop')}}{{ '/'. $details['pre_image']}}.jpg"></a>
-                                                    
-                                        </div>
-                                        <div class="shopping-cart-title">
-                                            <h4><a href="product-details.html">{{ $details['name'] }}</a></h4>
-                                            <h4><span> </span>${{ $details['price']- ($details['sale'] * $details['price']) / 100 }}</h4>
-                                            <h4 style="margin-right: 100px" class="text-center" data-title="Stock"><div class="detail-qty border radius  m-auto">
-                                                <a style="padding:0 10px" href="{{ route('minus_quantity',$details['id']) }}" class=""><i class="fi-rs-angle-small-down"></i></a>
-                                                <span style="padding:0 10px" class="qty-val">{{ $details['quantity'] }}</span>
-                                                <a href="{{ route('plus_quantity',$details['id']) }}" class=""><i class="fi-rs-angle-small-up"></i></a>
-                                            </div></h4>
-                                        </div>
-                                        <div class="shopping-cart-delete">
-                                            <a href="#"><i class="fi-rs-cross-small"></i></a>
-                                        </div>
-                                    </li>
-                                    
-                                    
-                                    @endforeach
-                                    @endif
-                                       
+                                        @foreach ((array) session('cart') as $id => $details)
+                                            @php $total += ($details['price']- ($details['sale'] * $details['price']) / 100) * $details['quantity'] @endphp
+                                        @endforeach
+                                        @if (session('cart'))
+                                            @foreach (session('cart') as $id => $details)
+                                                <li>
+                                                    <div class="shopping-cart-img">
+
+                                                        <a href="product-details.html"><img alt=""
+                                                                src="{{ asset('assets/imgs/shop') }}{{ '/' . $details['pre_image'] }}.jpg"></a>
+
+                                                    </div>
+                                                    <div class="shopping-cart-title">
+                                                        <h4><a href="product-details.html">{{ $details['name'] }}</a>
+                                                        </h4>
+                                                        <h4><span>
+                                                            </span>${{ $details['price'] - ($details['sale'] * $details['price']) / 100 }}
+                                                        </h4>
+                                                        <h4 style="margin-right: 100px" class="text-center"
+                                                            data-title="Stock">
+                                                            <div class="detail-qty border radius  m-auto">
+                                                                <a style="padding:0 10px"
+                                                                    href="{{ route('minus_quantity', $details['id']) }}"
+                                                                    class=""><i
+                                                                        class="fi-rs-angle-small-down"></i></a>
+                                                                <span style="padding:0 10px"
+                                                                    class="qty-val">{{ $details['quantity'] }}</span>
+                                                                <a href="{{ route('plus_quantity', $details['id']) }}"
+                                                                    class=""><i
+                                                                        class="fi-rs-angle-small-up"></i></a>
+                                                            </div>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="shopping-cart-delete">
+                                                        <a href="#"><i class="fi-rs-cross-small"></i></a>
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        @endif
+
                                     </ul>
                                     <div class="shopping-cart-footer">
                                         <div class="shopping-cart-total">
@@ -129,12 +156,12 @@
         </div>
     </div>
     @if (\Session::has('success'))
-    <div class="alert alert-success">
-        <ul>
-            <li>{!! \Session::get('success') !!}</li>
-        </ul>
-    </div>
-@endif
+        <div class="alert alert-success">
+            <ul>
+                <li>{!! \Session::get('success') !!}</li>
+            </ul>
+        </div>
+    @endif
     <div class="header-bottom header-bottom-bg-color sticky-bar">
         <div class="container">
             <div class="header-wrap header-space-between position-relative">
@@ -456,8 +483,8 @@
                                         <li><a href="#">Mã giảm giá</a></li>
                                         <li><a href="{{ route('cart') }}">Đơn đặt hàng</a></li>
                                         @if (session()->has('id'))
-                                        <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
-                                            @endif
+                                            <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
+                                        @endif
                                     </ul>
                                 </li>
                             </ul>
@@ -472,13 +499,15 @@
                     <div class="header-action-2">
                         <div class="header-action-icon-2">
                             <a href="shop-wishlist.php">
-                                <img alt="Surfside Media" src="{{ asset('assets/imgs/theme/icons/icon-heart.svg') }} ">
+                                <img alt="Surfside Media"
+                                    src="{{ asset('assets/imgs/theme/icons/icon-heart.svg') }} ">
                                 <span class="pro-count white">4</span>
                             </a>
                         </div>
                         <div class="header-action-icon-2">
                             <a class="mini-cart-icon" href="cart.html">
-                                <img alt="Surfside Media" src="{{ asset('assets/imgs/theme/icons/icon-cart.svg') }} ">
+                                <img alt="Surfside Media"
+                                    src="{{ asset('assets/imgs/theme/icons/icon-cart.svg') }} ">
                                 <span class="pro-count white">2</span>
                             </a>
                             <div class="cart-dropdown-wrap cart-dropdown-hm2">
@@ -490,7 +519,7 @@
                                         </div>
                                         <div class="shopping-cart-title">
                                             <h4><a href="product-details.html">Plain Striola Shirts</a></h4>
-                                            <h3><span>1  </span>$800.00</h3>
+                                            <h3><span>1 </span>$800.00</h3>
                                         </div>
                                         <div class="shopping-cart-delete">
                                             <a href="#"><i class="fi-rs-cross-small"></i></a>
@@ -646,12 +675,63 @@
             </div>
             <div class="mobile-social-icon">
                 <h5 class="mb-15 text-grey-4">Follow Us</h5>
-                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-facebook.svg') }} " alt=""></a>
-                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-twitter.svg') }} " alt=""></a>
-                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-instagram.svg') }} " alt=""></a>
-                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-pinterest.svg') }} " alt=""></a>
-                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-youtube.svg') }} " alt=""></a>
+                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-facebook.svg') }} "
+                        alt=""></a>
+                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-twitter.svg') }} "
+                        alt=""></a>
+                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-instagram.svg') }} "
+                        alt=""></a>
+                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-pinterest.svg') }} "
+                        alt=""></a>
+                <a href="#"><img src="{{ asset('assets/imgs/theme/icons/icon-youtube.svg') }} "
+                        alt=""></a>
+                <a href="">ádfasdfasdf</a>
             </div>
         </div>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#search').on('keyup', function() {
+            var query = $(this).val();
+            $.ajax({
+                url: "search",
+                type: "GET",
+                data: {
+                    'search': query
+                },
+                success: function(data) {
+                    $('#search_list').html(data);
+                }
+            });
+            //end of ajax call
+        });
+    });
+    $.ajaxSetup({
+        headers: {
+            'csrftoken': '{{ csrf_token() }}'
+        }
+    });
+
+
+
+    
+
+
+    $(document).ready(function() {
+        $(".search-ajax").focus(function() {
+            $(".result1").css("display", "block");
+        });
+    });
+    $(document).ready(function() {
+        $(".result1").hover(function() {
+            $(".result1").css("display", "block");
+        });
+    });
+    $(document).ready(function() {
+        $(".search-ajax").blur(function() {
+            $(".result1").css("display", "none").fadeOut(2000);
+        });
+    });
+</script>

@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -28,19 +29,51 @@ class ProductController extends Controller
     {
         //
     }
-    public function details($id){
+    public function details($id)
+    {
         $products = DB::table('products')
             ->join('categories', 'products.id_category', '=', 'categories.id',)
             ->select('products.*', 'categories.name as name_category')
-            ->where('products.id',$id)->first();
-            // dd($products);
-        return view( 'details_product', ['products' => $products] );
+            ->where('products.id', $id)->first();
+        // dd($products);
+        return view('details_product', ['products' => $products]);
     }
     public  function test()
     {
-        return view('details_product');
+        return view('includes.headertest');
     }
+    public function search(Request $request)
+    {
 
+        if ($request->ajax()) {
+
+            $data = Product::where('id', 'like', '%' . $request->search . '%')
+                ->orwhere('name', 'like', '%' . $request->search . '%')->get();
+            // dd($data);
+
+
+            $output = '';
+            if (count($data) > 0) {
+
+
+                foreach ($data as $row) {
+                    $link = route('details',$row->id);
+                    $output .= '
+                       
+                        <ul style="margin-top:3px;background: #f5f5f5;border-radius:3px;" class="test1">
+                        <li style="padding: 20px 0 3px 20px;" class="test11">
+                        <a href='.$link.'>'.$row->name.'</a>
+                        </li>
+                        </ul>';
+                }
+            } else {
+
+                $output .= 'No results';
+            }
+
+            return $output;
+        }
+    }
 
     /**
      * Store a newly created resource in storage.
