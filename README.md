@@ -54,8 +54,12 @@ You can now access the server at http://localhost:8000
 
 To install with [Docker](https://www.docker.com), run following commands:
 
-git clone https://github.com/duongminhhung/ECommerce-Laravel.git clone git@github.com:gothinkster/laravel-realworld-example-app.git
-cd ECommerce-Laravel
+```
+git clone git@github.com:gothinkster/laravel-realworld-example-app.git
+cd laravel-realworld-example-app
+cp .env.example.docker .env
+docker run -v $(pwd):/app composer install
+cd ./docker
 docker-compose up -d
 You can now access the server nginx http://localhost:7123/
 You can now access the server database http://localhost:7124/ 
