@@ -48,26 +48,64 @@ class ProductController extends Controller
             // dd($data);
 
             $output = '';
-            if (count($data) > 0) {
+            if($request!=''){
+                if (count($data) > 0) {
 
 
-                foreach ($data as $row) {
-                    $link = route('details',$row->id);
+                    foreach ($data as $row) {
+                        $link = route('details',$row->id);
+                        $output .= '
+                           
+                            <ul style="margin-top:3px;background: #f5f5f5;border-radius:3px;" class="test1">
+                            <li style="padding: 20px 0 3px 20px;" class="test11">
+                            <a href='.$link.'>'.$row->name.'</a>
+                            </li>
+                            </ul>';
+                    }
+                } else {
+    
                     $output .= '
-                       
-                        <ul style="margin-top:3px;background: #f5f5f5;border-radius:3px;" class="test1">
-                        <li style="padding: 20px 0 3px 20px;" class="test11">
-                        <a href='.$link.'>'.$row->name.'</a>
-                        </li>
-                        </ul>';
+                           
+                    <ul style="margin-top:3px;background: #f5f5f5;border-radius:3px; display:block" class="test1">
+                    <li  style="padding: 20px 0 3px 20px;width: 620px;" class="test11">
+                    Không tìm thấy kết quả                             
+                    </li>
+                    </ul>';
                 }
-            } else {
-
-                $output .= 'Không có kết quả';
             }
+                
 
             return $output;
         // }
+    }
+    public function wishlist(){
+        if(session()->has('id')){
+            return view('wishlist');
+        }else{
+            return  view('login');
+        }
+    }
+    public function addToWishlist($id){
+        $product = Product::findOrFail($id);
+
+        $wishlist = session()->get('wishlist', []);
+        // dd($wishlist);
+
+        if (isset($wishlist[$id])) {
+            $wishlist[$id]['quantity']++;
+        }else {
+            $wishlist[$id] = [
+                "id" => $id,
+                "name" => $product->name,
+                "quantity" => 1,
+                "price" => $product->price,
+                "sale" => $product->sale,
+                "pre_image" => $product->pre_image
+            ];
+        }
+
+        session()->put('wishlist', $wishlist);
+        return redirect()->back()->with('success', 'Đã thêm sản phẩm yêu thích');
     }
 
     /**

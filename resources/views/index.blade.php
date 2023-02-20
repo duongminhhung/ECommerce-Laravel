@@ -27,11 +27,11 @@
                         <div class="row align-items-center slider-animated-1">
                             <div class="col-lg-5 col-md-6">
                                 <div class="hero-slider-content-2">
-                                    <h4 class="animated">Trade-in offer</h4>
-                                    <h2 class="animated fw-900">Supper value deals</h2>
-                                    <h1 class="animated fw-900 text-brand">On all products</h1>
-                                    <p class="animated">Save more with coupons & up to 70% off</p>
-                                    <a class="animated btn btn-brush btn-brush-3" href="product-details.html"> Shop
+                                    <h4 class="animated">Hoàn trả hàng miễn phí</h4>
+                                    <h2 class="animated fw-900">Nhiều ưu đãi lớn</h2>
+                                    <h1 class="animated fw-900 text-brand">Tất cả trên các sản phẩm</h1>
+                                    <p class="animated">Tiết kiệm nhiều hơn với phiếu giảm giá & giảm giá tới 70%</p>
+                                    <a class="animated btn btn-brush btn-brush-3" href="{{ route('shop') }}"> Shop
                                         Now </a>
                                 </div>
                             </div>
@@ -49,12 +49,12 @@
                         <div class="row align-items-center slider-animated-1">
                             <div class="col-lg-5 col-md-6">
                                 <div class="hero-slider-content-2">
-                                    <h4 class="animated">Hot promotions</h4>
-                                    <h2 class="animated fw-900">Fashion Trending</h2>
-                                    <h1 class="animated fw-900 text-7">Great Collection</h1>
-                                    <p class="animated">Save more with coupons & up to 20% off</p>
-                                    <a class="animated btn btn-brush btn-brush-2" href="product-details.html">
-                                        Discover Now </a>
+                                    <h4 class="animated">Khuyến mãi cực lớn</h4>
+                                    <h2 class="animated fw-900">Thời trang</h2>
+                                    <h1 class="animated fw-900 text-7">Bộ sưu tập</h1>
+                                    <p class="animated">Tiết kiệm và giảm giá tới 20%</p>
+                                    <a class="animated btn btn-brush btn-brush-2" href="{{ route('shop') }}">
+                                        Khám phá ngay </a>
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-6">
@@ -119,17 +119,17 @@
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="nav-tab-one" data-bs-toggle="tab"
                                 data-bs-target="#tab-one" type="button" role="tab" aria-controls="tab-one"
-                                aria-selected="true">Featured</button>
+                                aria-selected="true">Đặc sắc</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="nav-tab-two" data-bs-toggle="tab" data-bs-target="#tab-two"
                                 type="button" role="tab" aria-controls="tab-two"
-                                aria-selected="false">Popular</button>
+                                aria-selected="false">Phổ biến</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="nav-tab-three" data-bs-toggle="tab"
                                 data-bs-target="#tab-three" type="button" role="tab" aria-controls="tab-three"
-                                aria-selected="false">New added</button>
+                                aria-selected="false">Mới nhất</button>
                         </li>
                     </ul>
                     <a href="#" class="view-more d-none d-md-flex">View More<i
@@ -159,7 +159,7 @@
                                                     data-bs-toggle="modal" data-bs-target="#quickViewModal"><i
                                                         class="fi-rs-eye"></i></a>
                                                 <a aria-label="Add To Wishlist" class="action-btn hover-up"
-                                                    href="wishlist.php"><i class="fi-rs-heart"></i></a>
+                                                    href=""><i class="fi-rs-heart"></i></a>
                                                 <a aria-label="Compare" class="action-btn hover-up"
                                                     href="compare.php"><i class="fi-rs-shuffle"></i></a>
                                             </div>
@@ -257,7 +257,7 @@
                     <div class="tab-pane fade" id="tab-three" role="tabpanel" aria-labelledby="tab-three">
                         <div class="row product-grid-4">
 
-                            @foreach ($product_popular as $item)
+                            @foreach ($product_feature as $item)
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 col-6">
                                 <div class="product-cart-wrap mb-30">
                                     <div class="product-img-action-wrap">
@@ -319,16 +319,16 @@
                 <div class="banner-img banner-big wow fadeIn animated f-none">
                     <img src="assets/imgs/banner/banner-4.png" alt="">
                     <div class="banner-text d-md-block d-none">
-                        <h4 class="mb-15 mt-40 text-brand">Repair Services</h4>
-                        <h1 class="fw-600 mb-20">We're an Apple <br>Authorised Service Provider</h1>
-                        <a href="shop.html" class="btn">Learn More <i class="fi-rs-arrow-right"></i></a>
+                        <h4 class="mb-15 mt-40 text-brand">Dịch vụ của chúng tôi</h4>
+                        <h1 class="fw-600 mb-20">Chúng tôi được ủy quyền <br>bởi nhà cung cấp</h1>
+                        <a href="{{ route('shop') }}" class="btn">Xem thêm <i class="fi-rs-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
         <section class="popular-categories section-padding mt-15 mb-25">
             <div class="container wow fadeIn animated">
-                <h3 class="section-title mb-20"><span>Popular</span> Categories</h3>
+                <h3 class="section-title mb-20"><span>Danh mục </span> phổ biến</h3>
                 <div class="carausel-6-columns-cover position-relative">
                     <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows">
                     </div>
@@ -431,7 +431,7 @@
         </section>
         <section class="section-padding">
             <div class="container wow fadeIn animated">
-                <h3 class="section-title mb-20"><span>New</span> Arrivals</h3>
+                <h3 class="section-title mb-20"><span>Sản phẩm</span> mới</h3>
                 <div class="carausel-6-columns-cover position-relative">
                     <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow"
                         id="carausel-6-columns-2-arrows"></div>
@@ -686,7 +686,7 @@
 
         <section class="section-padding">
             <div class="container">
-                <h3 class="section-title mb-20 wow fadeIn animated"><span>Featured</span> Brands</h3>
+                <h3 class="section-title mb-20 wow fadeIn animated"><span>Brands</span> nổi bật</h3>
                 <div class="carausel-6-columns-cover position-relative wow fadeIn animated">
                     <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow"
                         id="carausel-6-columns-3-arrows"></div>

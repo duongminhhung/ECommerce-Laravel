@@ -16,9 +16,9 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function contact()
     {
-        //
+        return view('contact');
     }
     public function login()
     {
@@ -33,6 +33,9 @@ class CustomerController extends Controller
     {
         session()->flush();
         return redirect()->route('index');  
+    }
+    public function blog(){
+        return view('blog');
     }
 
     /**
@@ -74,6 +77,9 @@ class CustomerController extends Controller
         
         return redirect()->route('index');
 
+    }
+    public function about(){
+        return view('about');
     }
 
     /**

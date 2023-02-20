@@ -81,10 +81,10 @@
                     <div class="header-action-right">
                         <div class="header-action-2">
                             <div class="header-action-icon-2">
-                                <a href="shop-wishlist.php">
+                                <a href="{{ route('wishlist') }}">
                                     <img class="svgInject" alt="Surfside Media"
                                         src="{{ asset('assets/imgs/theme/icons/icon-heart.svg') }} ">
-                                    <span class="pro-count blue">4</span>
+                                    <span class="pro-count blue">{{ count((array) session('wishlist')) }}</span>
                                 </a>
                             </div>
                             <div class="header-action-icon-2">
@@ -105,12 +105,12 @@
                                                 <li>
                                                     <div class="shopping-cart-img">
 
-                                                        <a href="product-details.html"><img alt=""
+                                                        <a href="{{ route('details',$details['id']) }}"><img alt=""
                                                                 src="{{ asset('assets/imgs/shop') }}{{ '/' . $details['pre_image'] }}.jpg"></a>
 
                                                     </div>
                                                     <div class="shopping-cart-title">
-                                                        <h4><a href="product-details.html">{{ $details['name'] }}</a>
+                                                        <h4><a href="{{ route('details',$details['id']) }}">{{ $details['name'] }}</a>
                                                         </h4>
                                                         <h4><span>
                                                             </span>${{ $details['price'] - ($details['sale'] * $details['price']) / 100 }}
@@ -144,7 +144,7 @@
                                         </div>
                                         <div class="shopping-cart-button">
                                             <a href="{{ route('cart') }}" class="outline">Giỏ hàng</a>
-                                            <a href="checkout.html">Thanh toán</a>
+                                            <a href="{{ route('checkout') }}">Thanh toán</a>
                                         </div>
                                     </div>
                                 </div>
@@ -411,7 +411,7 @@
                         <nav>
                             <ul>
                                 <li><a class="active" href="{{ route('index') }}">Trang chủ </a></li>
-                                <li><a href="about.html">Thông tin</a></li>
+                                <li><a href="{{ route('about') }}">Thông tin</a></li>
                                 <li><a href="{{ route('shop') }}">Gian hàng</a></li>
                                 <li class="position-static"><a href="#">Bộ sưu tập<i
                                             class="fi-rs-angle-down"></i></a>
@@ -473,8 +473,8 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="blog.html">Blog </a></li>
-                                <li><a href="contact.html">Liên hệ</a></li>
+                                <li><a href="{{ route('blog') }}">Blog </a></li>
+                                <li><a href="{{ route('contact') }}">Liên hệ</a></li>
                                 <li><a href="#">Tài khoản<i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="#">Dashboard</a></li>
