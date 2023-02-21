@@ -194,13 +194,13 @@
                                                                     href="{{ route('hoodie') }}">Hoodies & Sweater</a>
                                                             </li>
                                                             <li><a class="dropdown-item nav-link nav_item"
-                                                                    href="#">Đồ nữ</a></li>
+                                                                    href="{{ route('donu') }}">Đồ nữ</a></li>
                                                             <li><a class="dropdown-item nav-link nav_item"
-                                                                    href="#">Suits & Blazers</a></li>
+                                                                    href="{{ route('SuitsBlazers') }}">Suits & Blazers</a></li>
                                                             <li><a class="dropdown-item nav-link nav_item"
-                                                                    href="#">Bodysuits</a></li>
+                                                                    href="{{ route('Bodysuits') }}">Bodysuits</a></li>
                                                             <li><a class="dropdown-item nav-link nav_item"
-                                                                    href="#">Tanks & Camis</a></li>
+                                                                    href="{{ route('TanksCamis') }}">Tanks & Camis</a></li>
                                                             <li><a class="dropdown-item nav-link nav_item"
                                                                     href="#">Áo khoác & Jackets</a></li>
                                                         </ul>

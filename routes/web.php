@@ -25,6 +25,10 @@ Route::controller(CategoryController::class)->group(function () {
     Route::get('/vay-dam',  'slect')->name('vaydam');
     Route::get('/ao-dai-va-ao-so-mi',  'slect1')->name('aodai');
     Route::get('/hoodie-va-sweater',  'slect2')->name('hoodie');
+    Route::get('/do-nu',  'donu')->name('donu');
+    Route::get('/Suits-Blazers',  'SuitsBlazers')->name('SuitsBlazers');
+    Route::get('/Bodysuits',  'Bodysuits')->name('Bodysuits');
+    Route::get('/Tanks-Camis',  'TanksCamis')->name('TanksCamis');
     Route::get('/orders/{id}', 'show');
     Route::post('/orders', 'store');
     Route::get('/cart', 'cart')->name('cart');

@@ -103,6 +103,51 @@ class CategoryController extends Controller
             'products' => $products,
         ]);
     }
+    public function donu()
+    {
+        $products = DB::table('products')
+            ->join('categories', 'products.id_category', '=', 'categories.id')
+            ->select('products.*', 'categories.name as name_category')
+            ->where('id_category', '=', 4)->paginate(9);
+        // dd($products);
+        return view('.shop', [
+            'products' => $products,
+        ]);
+    }
+    public function SuitsBlazers()
+    {
+        $products = DB::table('products')
+            ->join('categories', 'products.id_category', '=', 'categories.id')
+            ->select('products.*', 'categories.name as name_category')
+            ->where('id_category', '=', 5)->paginate(9);
+        // dd($products);
+        return view('.shop', [
+            'products' => $products,
+        ]);
+    }
+    public function Bodysuits()
+    {
+        $products = DB::table('products')
+            ->join('categories', 'products.id_category', '=', 'categories.id')
+            ->select('products.*', 'categories.name as name_category')
+            ->where('id_category', '=', 6)->paginate(9);
+        // dd($products);
+        return view('.shop', [
+            'products' => $products,
+        ]);
+    }
+    public function TanksCamis()
+    {
+        $products = DB::table('products')
+            ->join('categories', 'products.id_category', '=', 'categories.id')
+            ->select('products.*', 'categories.name as name_category')
+            ->where('id_category', '=', 7)->paginate(9);
+        // dd($products);
+        return view('.shop', [
+            'products' => $products,
+        ]);
+    }
+    
 #asdfasdfasfasdfsdag
 
     /**
