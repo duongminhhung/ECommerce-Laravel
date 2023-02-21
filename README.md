@@ -27,6 +27,9 @@ You can now access the server database http://localhost:7124/
 Username: root
 Password: abcxyz123
 
+
+
+## Build configuration
 Clone the repository
 
     git clone https://github.com/duongminhhung/ECommerce-Laravel.git
