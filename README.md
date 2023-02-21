@@ -28,8 +28,8 @@ Username: root
 Password: abcxyz123
 
 
-
-## Build configuration
+```
+## Build 
 Clone the repository
 
     git clone https://github.com/duongminhhung/ECommerce-Laravel.git
