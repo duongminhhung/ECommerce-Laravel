@@ -103,7 +103,7 @@ class CategoryController extends Controller
             'products' => $products,
         ]);
     }
-
+#asdfasdfasfasdfsdag
 
     /**
      * Show the form for creating a new resource.
