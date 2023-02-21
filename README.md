@@ -13,6 +13,19 @@
 Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/9.x/installation)
 
 Alternative installation is possible without local dependencies relying on [Docker](#docker). 
+## Docker
+
+To install with [Docker](https://www.docker.com), run following commands:
+
+```
+git clone https://github.com/duongminhhung/ECommerce-Laravel.git
+cd ECommerce-Laravel
+cp .env.example.docker .env
+docker-compose up -d
+You can now access the server nginx http://localhost:7123/
+You can now access the server database http://localhost:7124/ 
+Username: root
+Password: abcxyz123
 
 Clone the repository
 
@@ -48,19 +61,7 @@ Start the local development server
 
 You can now access the server at http://localhost:8000
 
-## Docker
 
-To install with [Docker](https://www.docker.com), run following commands:
-
-```
-git clone https://github.com/duongminhhung/ECommerce-Laravel.git
-cd ECommerce-Laravel
-cp .env.example.docker .env
-docker-compose up -d
-You can now access the server nginx http://localhost:7123/
-You can now access the server database http://localhost:7124/ 
-Username: root
-Password: abcxyz123
 
 
 
